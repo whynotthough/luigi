@@ -12,7 +12,7 @@ module.exports =
   extensions: [
     collections(folder: 'products', layout: 'product'),
     js_pipeline(files: 'assets/js/*.coffee'),
-    css_pipeline(files: 'assets/css/*.styl')
+    css_pipeline(files: 'assets/css/*.styl', ['scss'])
   ]
 
   stylus:

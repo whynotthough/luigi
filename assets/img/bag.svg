@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Bag</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="4.63157895" width="24" height="17.3684211" rx="1"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="24" height="17.3684211" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="Left-Menu.-Product" transform="translate(-95.000000, -371.000000)" stroke="#1B472C">
+            <g id="Bag" transform="translate(95.000000, 372.000000)">
+                <use id="Rectangle" mask="url(#mask-2)" stroke-width="2" fill-opacity="0" fill="#D8D8D8" xlink:href="#path-1"></use>
+                <path d="M6.85714286,4.23420878 C6.85714286,4.23420878 7.56882653,0 12,0 C16.4311735,0 17.1428571,4.23420878 17.1428571,4.23420878" id="Line" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

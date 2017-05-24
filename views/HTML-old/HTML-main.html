@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Standard Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+	<!-- <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32"> -->
+	<!-- <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16"> -->
+
+	<!--build:css css/styles.min.css-->
+	<link rel="stylesheet" type="text/css" href="css/components/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/components/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/components/banner.css">
+	<link rel="stylesheet" type="text/css" href="css/components/products.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<link href="css/snipcart.min.css" rel="stylesheet" type="text/css" />
+	<!--endbuild-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw"></script>
+<!-- 	<link href="https://cdn.snipcart.com/themes/2.0/luigi/snipcart.min.css" type="text/css" rel="stylesheet" /> -->
+<!-- 	<link href="http://localhost:3006/themes/luigi/css/snipcart.css" rel="stylesheet" type="text/css" /> -->
+
+	<title>Luigi Borrelli Beauty</title>
+
+</head>
+<body>
+
+	<nav id="sidenav">
+		<img id="middlelogo" src="images/middle-logo-borrelli.svg">
+		<ul>
+			<li><a href="http://www.luigiborrelli.com" id="globalsite">LuigiBorrelli.com<i class="fa fa-external-link" aria-hidden="true" style="font-size: 0.8em; padding-left: 5px;"></i></a></li>
+			<li><a href="index.html">All Fragrances</a></li>
+			<li><a href="cotton.html">Cotton</a></li>
+			<li><a href="cashmere.html">Cashmere</a></li>
+			<li><a href="wool.html">Vicuña Wool</a></li>
+			<li><a href="#" id="mycart" class="snipcart-checkout"><span>My Cart  </span><img id="bagicon" src="images/bag.svg" alt=""></a></li>
+		</ul>
+	</nav>
+
+	<div id="page">
+		<header id="banner" style="">
+			<div>
+				<h1>Luigi Borrelli Beauty</h1>
+				<p>
+					Welcome! Buy the fragrances online. 
+					<br>Free delivery
+				</p>
+			</div>
+		</header>
+
+		<section id="products">
+			<div class="product-card" style="background-image: url('images/cotton-card.png')">
+				<a href="cotton.html">
+				<div class="product-card-content">
+					<h2>Cotton</h2>
+					<p class="p-card-subtext">100 ml Eau de Parfum</p>
+					<p class="p-card-price">€ 299</p>
+					<button class="clear-cta">Add to cart</button>
+				</div>
+				</a>
+			</div>
+			<div class="product-card" style="background-image: url('images/cashmere-card.png')">
+				<a href="cashmere.html">
+					<div class="product-card-content">
+						<h2>Cashmere</h2>
+						<p class="p-card-subtext">100 ml Eau de Parfum</p>
+						<p class="p-card-price">€ 299</p>
+						<button class="clear-cta">Add to cart</button>
+					</div>
+				</a>
+			</div>
+			<div class="product-card" style="background-image: url('images/wool-card.png')">
+				<a href="wool.html">
+				<div class="product-card-content">
+					<h2>Vicuña Wool</h2>
+					<p class="p-card-subtext">100 ml Eau de Parfum</p>
+					<p class="p-card-price">€ 299</p>
+					<button class=" clear-cta">Add to cart</button>
+				</div>
+				</a>
+			</div>
+		</section>
+
+		<footer>
+			<ul class="half-footer-item">
+				<li><a href="privacy.html">Privacy Policy</a></li>
+				<li><a href="delivery.html">Delivery</a></li>
+				<li><a href="contacts.html">Contacts</a></li>
+				<li><a href="images/press-release-borrelli-eng.pdf">For Press</a></li>
+			</ul>
+			<form id="email-form" class="half-footer-item" action="javascript:tempSuccess();">
+				<p>
+					More beauty products go live soon! 
+					<br>You may want not to miss...
+				</p>
+				<input type="email" placeholder="YOUR EMAIL">
+				<button class="clear-cta">Subscribe</button>
+				<!-- <input type="submit" value="Subscribe" class="clear-cta"> -->
+			</form>
+		</footer>
+
+	</div>
+
+<!-- 	<script> // temporary handler for email subscribtion
+
+		function tempSuccess() {
+			var formText = document.querySelector("#email-form > p");
+			var formCTA = formText.innerHTML;
+			console.log(formCTA);
+			formText.innerHTML = "Thank you! <br> See you soon in your inbox...";
+			window.setTimeout("formText.innerHTML = formCTA", 1000);
+		}
+
+	</script> -->
+	
+	<!--build:js js/main.min.js -->
+	<!-- endbuild -->
+	<script src="https://use.fontawesome.com/bee672cfd0.js"></script>
+</body>
+</html>

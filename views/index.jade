@@ -1,6 +1,30 @@
 extends layout
 
 block content
-  h3 Welcome to roots!
-  :marked
-    Find tutorials and documentation at http://roots.cx : )
+	header#banner
+		div
+			h1 Luigi Borrelli Beauty
+			p Welcome! Buy the fragrances online. <br>Free delivery
+
+	main#products
+		.product-card(style="background-image: url('img/cotton-card.png')")
+			a(href="cotton.html")
+				.product-card-content
+					h2 Cotton
+					p.p-card-subtext 100 ml Eau de Parfum
+					p.p-card-price € 299
+					button.clear-cta Add to cart
+		.product-card(style="background-image: url('img/cashmere-card.png')")
+			a(href="cashmere.html")
+				.product-card-content
+					h2 Cashmere
+					p.p-card-subtext 100 ml Eau de Parfum
+					p.p-card-price € 299
+					button.clear-cta Add to cart
+		.product-card(style="background-image: url('img/wool-card.png')")
+			a(href="wool.html")
+				.product-card-content
+					h2 Vicuña Wool
+					p.p-card-subtext 100 ml Eau de Parfum
+					p.p-card-price € 299
+					button.clear-cta Add to cart
