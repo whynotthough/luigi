@@ -15,7 +15,8 @@ block content
 	if detectedIn >= 0
 		if pageToPull[detectedIn].pdf
 			script.
-				window.open("#{asset(pageToPull[detectedIn].pdf)}")
+				var newTab = window.open('#{asset(pageToPull[detectedIn].pdf)}', '_blank');
+				newTab.location;
 				location = "/"
 		else
 			h2#textPage= pageToPull[detectedIn].headline
