@@ -2,7 +2,7 @@ footer
 	ul.half-footer-item
 		each page in contentful.textPages
 			li
-				a(href="#{slugme(page.footerLinkName.toLowerCase())}.html") #{page.footerLinkName}
+				a(href="/#{slugme(page.footerLinkName.toLowerCase())}.html") #{page.footerLinkName}
 		
 		li
 			a(href="/contacts.html") Contacts
