@@ -3,16 +3,21 @@ rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
-collections  = require 'roots-collections'
+# collections  = require 'roots-collections'  # lock later
+contentful   = require 'roots-contentful'
+config       = require './contentful'
+marked       = require 'marked'
+slugify      = require 'slugify'
 
 
 module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
 
   extensions: [
-    collections(folder: 'products', layout: 'product'),
-    js_pipeline(files: 'assets/js/*.coffee'),
-    css_pipeline(files: 'assets/css/*.styl', ['scss'])
+    contentful(config),
+    # collections(folder: 'testproducts', layout: 'testproduct'), # lock later
+    js_pipeline(files: 'assets/js/*.+(coffee|js)', out: '/js/main.js'),
+    css_pipeline(files: 'assets/css/*.+(styl|css)', out: '/css/master.css')
   ]
 
   stylus:
@@ -24,3 +29,7 @@ module.exports =
 
   jade:
     pretty: true
+
+  locals:
+    markdown: marked
+    slugme: slugify

@@ -1,18 +1,24 @@
 nav#sidenav
-	img#middlelogo(src="img/middle-logo-borrelli.svg", alt="")
+	img#middlelogo(src="/img/middle-logo-borrelli.svg", alt="")
 	ul
 		li
 			a#globalsite(href="http://www.luigiborrelli.com") LuigiBorrelli.com
-			i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;")
+				i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
 		li
-			a(href="index.html") All Fragrances
-		li
-			a(href="cotton.html") Cotton
-		li
-			a(href="cashmere.html") Cashmere
-		li
-			a(href="wool.html") Vicuña Wool
+			a(href="/") All Fragrances
+		
+		each product in contentful.products
+			- var productName = product.name
+			li
+				a(href="/products/#{slugme(productName.toLowerCase())}.html") #{productName}	
+
+		//- li
+		//- 	a(href="/products/cotton.html") Cotton
+		//- li
+		//- 	a(href="cashmere.html") Cashmere
+		//- li
+		//- 	a(href="wool.html") Vicuña Wool
 		li
 			a#mycart.snipcart-checkout(href="#")
 				span My Cart
-				img#bagicon(src="img/bag.svg", alt="")
+				img#bagicon(src="/img/bag.svg", alt="")

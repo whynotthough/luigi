@@ -1,0 +1,28 @@
+extends layout
+
+//- temp. hardcoded workaround for showing only the pages which was found in Contentful textPages footerLinkName array
+block content
+	- var thisPage = 'privacy' 								//- what we'll try fo find in Contentful on deploy
+	- var detectedIn = -1 										  //- set the flag to 'not found' initialy
+	- var allPagesfooterLinkNames = ''					//- create empty string
+	- var pageToPull = contentful.textPages
+
+	for page, i in contentful.textPages
+		if page.footerLinkName.toLowerCase().indexOf(thisPage) >= 0
+			-detectedIn = i
+		-allPagesfooterLinkNames += page.footerLinkName.toLowerCase()
+
+	if detectedIn >= 0
+		if pageToPull[detectedIn].pdf
+			script.
+				window.open("#{asset(pageToPull[detectedIn].pdf)}")
+				location = "/"
+		else
+			h2#textPage= pageToPull[detectedIn].headline
+			article#textPage!= markdown(pageToPull[detectedIn].body)
+				//- a(href="#{asset(pageToPull[detectedIn].pdf)}") Download Press Release
+	
+	else
+		<script>location = "/"</script>
+
+	include ./includes/_footer

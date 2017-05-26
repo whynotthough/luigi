@@ -1,11 +1,74 @@
 @import '_settings'
-@import 'snipcart.min.css'
+// @import 'snipcart.min.css'
+// @import 'mymaster.css'
+@import '_nav'
+@import '_footer'
+@import '_main-page-banner'
+@import '_main-page-products'
+@import '_contacts-page'
+@import '_text-page'
+@import '_product-page'
+@import '_product-page-photos'
+@import '_product-page-aside'
+@import '_product-page-article'
 
-normalize-css()
+// normalize-css()
 base()
 
 body
-  padding: 50px
-  
-h3
-	color red
+	margin 0
+
+html, h1, h2, h3
+	line-height: 20px;
+	font-weight: 400;
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+
+main {
+	margin-left: 250px;
+	transition: margin-left 0.5s;
+}
+nav > ul, footer > ul {
+	text-transform: uppercase;
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+h2 {
+	color: lbgreen;
+	font-size: 30px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 2%;
+}
+
+.clear-cta {
+	color: lbgreen;
+	font-family: Raleway-Medium;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 35px;
+	outline: none;
+	cursor: pointer;
+	background: rgba(255,255,255,0.00);
+	border: 1px solid lbgreen;
+	border-radius: 1px;
+	opacity: 0.9;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	padding: 2px 20px;
+}
+
+@media all and (max-width: 1150px) {
+	#sidenav {
+		width: 0;
+	}
+
+	main {
+		margin-left: 0;
+	}
+}

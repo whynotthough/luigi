@@ -5,19 +5,33 @@
 // ---------------
 
 // Font stacks (add your own!)
-$helvetica-neue = "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif
-$helvetica = "Helvetica Neue", Helvetica, Arial, sans-serif
-$georgia = Georgia, Cambria, "Times New Roman", Times, serif
-$lucidia-grande = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
-$monospace = unquote("'Bitstream Vera Sans Mono', Consolas, Courier, monospace")
-$verdana = Verdana, Geneva, sans-serif
+// $helvetica-neue = "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif
+// $helvetica = "Helvetica Neue", Helvetica, Arial, sans-serif
+// $georgia = Georgia, Cambria, "Times New Roman", Times, serif
+// $lucidia-grande = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+// $monospace = unquote("'Bitstream Vera Sans Mono', Consolas, Courier, monospace")
+// $verdana = Verdana, Geneva, sans-serif
+$raleway = 'Raleway', sans-serif
+ /*--- Google Fonts ---*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600')
+
 
 // Default font settings
-$font-stack = $helvetica-neue
-$font-size = 16
-$font-color = #555
+$font-stack = $raleway
+$font-size = 14
+$font-color = rgba(34,34,34,0.9)
+
+/*BRAND COLORS*/
+/* !! WE USE GREEN:   #1B472C HEX > rgba(27,71,44,1.0)  BEIGE IS #F2E7C9 */
+/*luigiborrelli.com uses: #1a472b  #1a472b HEX > rgba(26,71,43,1.0) */
+/*real colors from guidelines are: 85C 0M 90Y 80B > #002714 HEX > rgba(8,51,5,1.0)*/
 
 // Colors (via http://clrs.cc - slightly modded)
+$lbblack  = rgba(34,34,34,0.9)
+$lbgreen  = #1B472C
+$lbbeige  = #F2E7C9
+
+
 $navy     = #001F3F
 $blue     = #0074D9
 $aqua     = #7FDBFF
@@ -37,6 +51,9 @@ $gray     = #AAAAAA
 $black    = #222222
 
 // Use as default HTML colors
+lbgreen = $lbgreen
+lbbeige = $lbbeige
+
 navy    = $navy
 blue    = $blue
 aqua    = $aqua
@@ -65,4 +82,4 @@ $highlight-color = $blue
 $img-path = '/img/'
 
 // Ligatures
-$ligatures = false
+// $ligatures = false

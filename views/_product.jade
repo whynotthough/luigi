@@ -1,0 +1,56 @@
+extends layout
+
+block extraHeader
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+
+block content
+	#page
+		header#bigphoto
+			img(src="#{entry.photos[0].fields.file.url}", alt="")
+
+		aside#description
+			p!= markdown(entry.shortDescription)
+
+		aside#lines-to-buy
+			h2= entry.name
+			p#subheadline= entry.subname
+			h3= entry.dominant
+			
+			span#price= '€ ' + entry.price
+			button#cta-buy-now.snipcart-add-item(
+				data-item-id="1"
+				data-item-name="#{entry.name.toUpperCase() + ' Luigi Borrelli'}"
+				data-item-price="#{entry.price}"
+				data-item-weight=""
+				data-item-url="products/#{slugme(entry.name.toLowerCase())}.html"
+				data-item-description="#{entry.subname}") Buy now
+			p#cta-subline= entry.buttonSubline
+			
+			table
+				tr
+					td.pyramid-level Top notes:
+					td.pyramid-notes= entry.topNotes
+				tr
+					td.pyramid-level Heart notes:
+					td.pyramid-notes= entry.heartNotes
+				tr
+					td.pyramid-level Base notes:
+					td.pyramid-notes= entry.baseNotes
+			
+		#productBottomHalf
+			#thumbs
+				each photo in entry.photos
+					- var thumbURL = asset(photo, {w: 200, h: 200, q: 100, fit: 'thumb', fm: 'jpg', fl: 'progressive'})
+					img(src="#{thumbURL}", alt="")
+
+			article#on-product
+				#read-more-cta
+					a
+						button Read More
+						i.fa.fa-angle-down
+				#white-gradient-when-collapsed
+				#product-longread.lr-collapsed!= markdown(entry.longDescription)
+
+		#productFooter
+			include ./includes/_footer
+	//- block extraFooter

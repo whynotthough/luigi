@@ -1,0 +1,41 @@
+#sidenav {
+	margin-top: 30px;
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	overflow-x: hidden;
+	transition: all 0.5s;
+}
+
+#sidenav > #middlelogo {
+	max-width: 220px;
+	margin-left: 40px;
+}
+
+nav > ul {
+	margin-top: 0;
+	text-align: left;
+}
+
+/*to prevent text to have more than one line when collapse sidenav*/
+nav > ul > li {
+	min-width: 250px;
+}
+
+#sidenav a {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 30px;
+	color: rgba(27,71,44,0.9);
+}
+a#globalsite, a#mycart{
+	line-height: 80px;
+}
+#mycart {
+	display: flex;
+	align-items: center;
+}
+#bagicon {
+	margin-left: 10px;
+	margin-bottom: 8px;
+}
