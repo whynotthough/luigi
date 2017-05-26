@@ -14,16 +14,14 @@ block content
 
 	if detectedIn >= 0
 		if pageToPull[detectedIn].pdf
-			script.
-				var newTab = window.open('#{asset(pageToPull[detectedIn].pdf)}', '_blank');
-				newTab.location;
-				location = "/"
+			#pdf
+				embed(src="#{asset(pageToPull[detectedIn].pdf)}", type="application/pdf", width="100%", height="100%")
 		else
 			h2#textPage= pageToPull[detectedIn].headline
 			article#textPage!= markdown(pageToPull[detectedIn].body)
-			//- a(href="#{asset(pageToPull[detectedIn].pdf)}") Download Press Release
-	
+			//- a(href="#{asset(pageToPull[detectedIn].pdf)}") Download Press Release	
 	else
-		<script>location = "/"</script>
+		script.
+			location = "/"
 
 	include ./includes/_footer

@@ -13,16 +13,12 @@ block content
 		- allPagesfooterLinkNames += page.footerLinkName.toLowerCase()
 
 	if detectedIn >= 0
-		if pageToPull[detectedIn].pdf
-			script.
-				window.open("#{asset(pageToPull[detectedIn].pdf)}")
-				location = "/"
-		else
-			h2#textPage= pageToPull[detectedIn].headline
-			article#textPage!= markdown(pageToPull[detectedIn].body)
-			//- a(href="#{asset(pageToPull[detectedIn].pdf)}") Download Press Release
-	
-	else
-		<script>location = "/"</script>
+		h2#textPage= pageToPull[detectedIn].headline
+		article#textPage!= markdown(pageToPull[detectedIn].body)
+		//- a(href="#{asset(pageToPull[detectedIn].pdf)}") Download Press Release
 
+	else
+		script.
+			location = "/"
+			
 	include ./includes/_footer
