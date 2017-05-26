@@ -16,19 +16,25 @@ module.exports =
   extensions: [
     contentful(config),
     # collections(folder: 'testproducts', layout: 'testproduct'), # lock later
-    js_pipeline(files: 'assets/js/*.+(coffee|js)', out: '/js/main.js'),
-    css_pipeline(files: 'assets/css/*.+(styl|css)', out: '/css/master.css')
+
+    # STAGING GONFIG
+    # js_pipeline(files: 'assets/js/*.+(coffee|js)', out: '/js/main.js'),
+    # css_pipeline(files: 'assets/css/*.+(styl|css)', out: '/css/master.css')
+
+    # PRODUCTION CONFIG
+    js_pipeline(files: 'assets/js/*.+(coffee|js)', out: 'js/build.js', minify: true, hash: true),
+    css_pipeline(files: 'assets/css/*.+(styl|css)', out: 'css/build.css', minify: true, hash: true)
   ]
 
   stylus:
     use: [axis(), rupture(), autoprefixer()]
-    sourcemap: true
+  #   sourcemap: true
 
-  'coffee-script':
-    sourcemap: true
+  # 'coffee-script':
+  #   sourcemap: true
 
-  jade:
-    pretty: true
+  # jade:
+  #   pretty: true
 
   locals:
     markdown: marked
