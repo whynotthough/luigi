@@ -3,7 +3,10 @@ extends layout
 block content
 	#page
 		header#bigphoto
-			img(src="#{entry.photos[0].fields.file.url}", alt="")
+			//- img(src="#{entry.photos[0].fields.file.url + bigPhotoParams}", alt="")
+			//- - var bigPhotoParams = '?w=800&h=500&&q=85&fm=jpg&fl=progressive&fit=pad&bg=rgb:f2e7c9'
+			- var bigPhotoParams = '' //-'?w=600&h=400'
+			img(src="https:#{entry.photos[0].fields.file.url + bigPhotoParams}", alt="")
 
 		aside#description
 			p!= markdown(entry.shortDescription)
@@ -37,8 +40,24 @@ block content
 		#productBottomHalf
 			#thumbs
 				each photo in entry.photos
-					- var thumbURL = asset(photo, {w: 200, h: 200, q: 100, fit: 'thumb', fm: 'jpg', fl: 'progressive'})
-					img(src="#{thumbURL}", alt="")
+					- var thumbURL = asset(photo, {w: 200, h: 200, q: 100, fit: 'thumb', fm: 'jpg', fl: 'progressive', bg: 'rgb:fcfaf5'})
+					img(src="https:#{thumbURL}", alt="")
+				
+				//- photo gallery switcher
+				script.
+					var thumbs = document.querySelectorAll("#thumbs > img");
+					var bigPhoto = document.querySelector("#bigphoto > img");
+					bigPhotoSwitcher();
+					function bigPhotoSwitcher() {
+						thumbs.forEach(function(thumb){
+							thumb.addEventListener("click", function(){
+								var thumbParamsPosition = thumb.src.indexOf('?');
+								var newAddrForBig = thumb.src.slice(0, thumbParamsPosition);
+								bigPhoto.src = newAddrForBig //- + '?w=600&h=400';
+								console.log(bigPhoto.src)
+							})
+						})
+					};
 
 			article#on-product
 				#read-more-cta
@@ -47,6 +66,21 @@ block content
 						i.fa.fa-angle-down
 				#white-gradient-when-collapsed
 				#product-longread.lr-collapsed!= markdown(entry.longDescription)
+				
+				script.
+					// open and collapse an ARTICLE on Product Page 
+					var more = document.querySelector("#read-more-cta a");
+					var longread = document.querySelector("#product-longread");
+					var gradient = document.querySelector("#white-gradient-when-collapsed");
+					more.addEventListener("click", function(){
+						if (longread.classList.contains("lr-collapsed")) {
+							more.innerHTML = '<button>Show Less</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
+						} else {
+							more.innerHTML = '<button>Read More</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
+						}
+						longread.classList.toggle("lr-collapsed");
+						gradient.classList.toggle("gradient-off");
+					});
 
 		#productFooter
 			include ./includes/_footer

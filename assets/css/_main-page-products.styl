@@ -3,21 +3,22 @@
 	flex-wrap: wrap;
 }
 
-#products > .product-card {
+#products > .product-card-box-gradient {
 	flex: 1 1 30%;
-	min-width: 250px;
+	background: linear-gradient(160deg, 
+                                    rgba(242, 232, 200,0.1) 0%, 
+                                    rgba(242, 232, 200,0.2) 50%);
 }
 
 .product-card {
-	background-color: rgba(242, 232, 200, 0.4);
-	/*background: linear-gradient(145deg, 
-                                    rgba(242, 232, 200,0.6) 0%, 
-                                    rgba(242, 232, 200,0.4) 50%);*/
+	// background-color: rgba(242, 232, 200, 0.4);
 	background-size: contain;
 	background-position: center center;
 	background-repeat: no-repeat;
 
-	height: 300px;
+	min-width: 250px;
+	height: 50vh;
+	// margin 20px 0 0 0
 }
 
 .product-card > a {

@@ -1,5 +1,4 @@
 @import '_settings'
-// @import '_snipcart.min.css'
 @import '_nav'
 @import '_footer'
 @import '_main-page-banner'
@@ -14,6 +13,7 @@
 // normalize-css()
 base()
 
+
 body
 	margin 0
 
@@ -25,7 +25,7 @@ html, h1, h2, h3
 
 main {
 	margin-left: 250px;
-	transition: margin-left 0.5s;
+	transition: all 0.5s;
 }
 nav > ul, footer > ul {
 	text-transform: uppercase;
@@ -62,12 +62,54 @@ h2 {
 	padding: 2px 20px;
 }
 
-@media all and (max-width: 1150px) {
+/*MEDIA QUERIES*/
+@media all and (max-width: 1100px) {
 	#sidenav {
 		width: 0;
 	}
-
+	#mobnav {
+		height auto
+	}
 	main {
 		margin-left: 0;
+		margin-top 60px
 	}
+	#page {
+		margin-top 60px
+	}	
+}
+
+@media all and (max-width: 768px) {
+	#bigphoto 
+	{
+		// margin: 0;
+	}
+	#page, footer {
+		flex-direction: column;    
+	}
+	#bigphoto, #lines-to-buy, #description, #productBottomHalf, #productFooter, #email-form, footer ul {
+		order: 0;
+	}
+	footer ul {
+		border 0
+	}
+	#thumbs {
+		display: none;
+	}
+	#productFooter {
+		padding-left 0
+	}
+		#lines-to-buy {
+		text-align center
+	}
+	#cta-subline {
+		padding-left 0
+	}
+	#lines-to-buy > table {
+		margin 0 auto
+		text-align left
+	}
+	#lines-to-buy > h3 {
+    margin 3% 0 3% 0
+  }
 }

@@ -1,4 +1,9 @@
 footer
+	form#email-form.half-footer-item(action='javascript:tempSuccess();')
+		p More beauty products go live soon! You may want not to miss...
+		input(type="email", placeholder="YOUR EMAIL")
+		button.clear-cta Subscribe
+	
 	ul.half-footer-item
 		each page in contentful.textPages
 			li
@@ -12,7 +17,3 @@ footer
 		//- li
 		//- 	a(href="/img/press-release-borrelli-eng.pdf") For Press
 	
-	form#email-form.half-footer-item(action='javascript:tempSuccess();')
-		p More beauty products go live soon! <br>You may want not to miss...
-		input(type="email", placeholder="YOUR EMAIL")
-		button.clear-cta Subscribe

@@ -3,7 +3,6 @@ rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
-# collections  = require 'roots-collections'  # lock later
 contentful   = require 'roots-contentful'
 config       = require './contentful'
 marked       = require 'marked'
@@ -15,7 +14,6 @@ module.exports =
 
   extensions: [
     contentful(config),
-    # collections(folder: 'testproducts', layout: 'testproduct'), # lock later
 
     # STAGING GONFIG
     # js_pipeline(files: 'assets/js/*.+(coffee|js)', out: '/js/main.js'),
@@ -28,13 +26,11 @@ module.exports =
 
   stylus:
     use: [axis(), rupture(), autoprefixer()]
-  #   sourcemap: true
-
-  # 'coffee-script':
-  #   sourcemap: true
-
-  # jade:
-  #   pretty: true
+  #   sourcemap: true  # comment this for production
+  # 'coffee-script':   # comment this for production
+  #   sourcemap: true  # comment this for production
+  # jade:              # comment this for production
+  #   pretty: true     # comment this for production
 
   locals:
     markdown: marked

@@ -15,7 +15,7 @@ block content
 	if detectedIn >= 0
 		if pageToPull[detectedIn].pdf
 			#pdf
-				embed(src="#{asset(pageToPull[detectedIn].pdf)}", type="application/pdf", width="100%", height="100%")
+				embed(src="#{asset(pageToPull[detectedIn].pdf)}", type="application/pdf")
 		else
 			h2#textPage= pageToPull[detectedIn].headline
 			article#textPage!= markdown(pageToPull[detectedIn].body)

@@ -1,7 +1,11 @@
 #page {
 	display: flex;
 	flex-flow: wrap; 
+	padding-top 3%
 } 
+
+#bigphoto, #productBottomHalf
+	margin 0 3% 0 3%
 
 #bigphoto {
 	/*background: #4990E2;*/
@@ -31,33 +35,7 @@
 }
 
 #productFooter {
-	width: 100%;
-	/*background: #D8D8D8;*/
-
 	order: 5;
 	flex: 1 1 100%;
-}
-
-/*MEDIA QUERIES*/
-@media all and (max-width: 1150px) {
-	#productBottomHalf {
-		padding: 0 3% 0 3%;
-		flex: 1 1 44%;
-	}
-}
-
-@media all and (max-width: 768px) {
-	#bigphoto, #productBottomHalf 
-	{
-		margin: 0;
-	}
-	#page {
-		flex-direction: column;    
-	}
-	#bigphoto, #lines-to-buy, #description, #productBottomHalf, #productFooter {
-		order: 0;
-	}
-	#thumbs {
-		display: none;
-	}
+	padding-left 3%
 }
