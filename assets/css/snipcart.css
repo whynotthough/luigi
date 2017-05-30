@@ -569,7 +569,7 @@ h4,
   .snip-layout .snip-actions__link--right {
     float: right; }
   .snip-layout .snip-table {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     width: 100%; }
     .snip-layout .snip-table td, .snip-layout .snip-table th, .snip-layout .snip-table tr {
@@ -595,7 +595,7 @@ h4,
   @media only screen and (max-width: 48em) {
     .snip-layout .snip-table--small {
       display: block;
-      font-size: 20px;
+      font-size: 18px;
       text-align: left; }
       .snip-layout .snip-table--small td, .snip-layout .snip-table--small th, .snip-layout .snip-table--small tr {
         display: block; }
@@ -684,7 +684,9 @@ h4,
       float: left;
       margin-top: 2em;
       text-align: center;
-      width: 33.333333%; }
+      width: 33.333333%;
+      padding-left: 4px;
+      padding-right: 4px; }
       .snip-layout .snip-table__small-col + .snip-table__small-col {
         border-left: 1px solid #eee; } }
   .snip-layout .snip-product {
