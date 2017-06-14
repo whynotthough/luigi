@@ -18,6 +18,13 @@ nav#sidenav
 				span My Cart
 				img#bagicon(src="/img/bag.svg", alt="")
 
+		li.social
+			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
+			
+			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
+				i(class="fa fa-instagram")
+
+
 nav#mobnav
 	#topbar
 		#burger(onclick="toggleBurger(this)")
@@ -45,3 +52,9 @@ nav#mobnav
 			- var productName = product.name
 			li
 				a.mobmenu(href="/products/#{slugme(productName.toLowerCase())}.html") #{productName}
+
+		li.social
+			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
+				
+			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
+				i(class="fa fa-instagram")
