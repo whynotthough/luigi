@@ -1,0 +1,9 @@
+extends(src='layout.sgr')
+	block(name='content')
+		#page
+			header#bigphoto
+				//- img(src="#{entry.photos[0].fields.file.url + bigPhotoParams}", alt="")
+				//- - var bigPhotoParams = '?w=800&h=500&&q=85&fm=jpg&fl=progressive&fit=pad&bg=rgb:f2e7c9'
+				//- - var bigPhotoParams = '' //-'?w=600&h=400'
+				//- p {{ JSON.stringify(item) }}
+				//- img(src="https:{{ item.photos[0].fields.file.url }}", alt="")

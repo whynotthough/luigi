@@ -1,0 +1,28 @@
+doctype html
+html
+
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='Luigi Borrelli Fragrances, official online boutique')
+    meta(name='author', content= 'Yuri Z.')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    block(name='title')
+      title Luigi Borrelli Fragrances
+    link(rel='icon', type='image/png', href='/img/favicon-96x96.png', sizes='96x96')
+
+    link(rel='stylesheet' href='css/index.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+    script(src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
+      id='snipcart'
+      data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')   
+
+  body
+    include(src='_nav.sgr')
+    main(role='main' id='{{ pageId }}')
+      block(name='content')      
+    
+    block(name='javascript')
+      script(src='js/main.js' defer)
+      script(src='https://use.fontawesome.com/bee672cfd0.js')
