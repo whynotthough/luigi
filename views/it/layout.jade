@@ -1,0 +1,29 @@
+doctype html
+html
+
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='Buy Fragrances in Official Online Store from Luigi Borrelli')
+    meta(name='author', content= "author of the site")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //- title= _path
+    title Luigi Borrelli Fragrances
+
+    link(rel="icon", type="image/png", href="/img/favicon-96x96.png", sizes="96x96")
+    != css()
+    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+    script(src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+      id="snipcart"
+      data-api-key="NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw")   
+
+  body
+    include includes/_nav.jade
+    main
+      block content      
+    block extraFooter
+    
+    != js()
+    script(src='https://use.fontawesome.com/bee672cfd0.js')

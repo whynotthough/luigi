@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	- var banner = contentful.headBanner[0]
+
+	header#banner(style="background-image: url(#{asset(banner.image)})")
+		#bannerGradient
+			div
+				h1= banner.headline
+				p= banner.subline
+
+	section#products
+		each fragrance in contentful.products
+			- var cardPhotoURL = asset(fragrance.cardPhoto)
+			.product-card-box-gradient
+				.product-card(style="background-image: url('#{cardPhotoURL}')")
+					a(href="products/#{slugme(fragrance.name.toLowerCase())}.html")
+						.product-card-content
+							h2= fragrance.name
+							p.p-card-subtext= fragrance.subname
+							p.p-card-price= '€ ' + fragrance.price
+							button.clear-cta Dettagli
+
+							if fragrance.fragranceDominantIt
+								p #{console.log(JSON.stringify(fragrance.fragranceDominantIt))}
+
+
+	include includes/_footer
