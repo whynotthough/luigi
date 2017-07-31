@@ -8,4 +8,4 @@ extends(src='layout.sgr')
 				// p {{ JSON.stringify(item) }}
 				// img(src="https:{{ item.photos[0].fields.file.url }}", alt="")
 				// p {{ JSON.stringify(item.name) }}
-				p {{ JSON.stringify(locals) }}
+				p {{ JSON.stringify(item.fields.name) }}

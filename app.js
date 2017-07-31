@@ -25,8 +25,8 @@ module.exports = {
           template: {
             path: 'views/_product.sgr',
             output: (e) => { return `products/${e.id}.html` }
-          },
-          json: 'products.json'
+          }
+          // json: 'products.json'
         },
         {
           name: 'textPages',
