@@ -16,13 +16,13 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
     script(src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
       id='snipcart'
-      data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')   
+      data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')
 
   body
-    include(src='_nav.sgr')
+    include(src='includes/_nav.sgr')
     main(role='main' id='{{ pageId }}')
-      block(name='content')      
-    
+      block(name='content')
+
     block(name='javascript')
       script(src='js/main.js' defer)
       script(src='https://use.fontawesome.com/bee672cfd0.js')

@@ -5,12 +5,12 @@ nav(id='sidenav')
 			a(id='globalsite', href="http://www.luigiborrelli.com")
 				span LuigiBorrelli.com
 				i(class='fa fa-external-link', style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
-		
+
 		li: a(href="/") All Fragrances
-		
+
 		each(loop='product of contentful.products')
-			li: a(href="/products/{{ slugme(product.fields.name.toLowerCase()) }}.html") {{ product.fields.name }}	
-		
+			li: a(href="/products/{{ slugme(product.fields.name.toLowerCase()) }}.html") {{ product.fields.name }}
+
 		li
 			a(class='mycart snipcart-checkout', href="#")
 				span My Cart
@@ -18,7 +18,7 @@ nav(id='sidenav')
 
 		li.social
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
-			
+
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
 				i(class="fa fa-instagram")
 
@@ -29,7 +29,7 @@ nav(id='mobnav')
 			.bar1
 			.bar2
 			.bar3
-		
+
 		script.
 			function toggleBurger(x) {
 			  x.classList.toggle("change");
@@ -46,7 +46,7 @@ nav(id='mobnav')
 			a(id='globalsite', href="http://www.luigiborrelli.com") LuigiBorrelli.com
 				i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
 		li: a.mobmenu(href="/") All Fragrances
-		
+
 		each(loop='product of contentful.products')
 			li: a.mobmenu(href="/products/ {{ slugme(product.fields.name.toLowerCase()) }}.html") {{ product.fields.name }}
 

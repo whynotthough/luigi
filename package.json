@@ -1,32 +1,34 @@
 {
-  "name": "borrelli-fragrances",
+  "name": "luigi",
   "description": "Online Boutique",
   "version": "0.0.1",
   "author": "whynotthough",
   "ava": {
     "verbose": "true"
   },
-  "bugs": "https://github.com/whynotthough/borrelli-fragrances/issues",
+  "bugs": "https://github.com/whynotthough/luigi/issues",
   "dependencies": {
     "reshape-standard": "^3.0.0",
+    "slugify": "^1.1.0",
+    "spike": "^2.2.0",
+    "spike-contentful": "^2.0.0",
     "spike-css-standards": "^3.0.0",
     "spike-js-standards": "^2.0.2",
     "spike-optimize": "^0.1.2",
     "spike-page-id": "^1.0.0",
-    "spike": "^2.0.0",
     "sugarml": "^0.6.0",
     "sugarss": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
+    "ava": "^0.21.0",
     "rimraf": "^2.6.1",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   },
-  "homepage": "https://github.com/whynotthough/borrelli-fragrances",
+  "homepage": "https://github.com/whynotthough/luigi",
   "main": "app.js",
   "private": true,
-  "repository": "https://github.com/whynotthough/borrelli-fragrances",
+  "repository": "https://github.com/whynotthough/luigi",
   "scripts": {
     "lint": "standard | snazzy",
     "precommit": "npm run lint -s",

@@ -3,12 +3,12 @@ footer
 		p Be the first to receive news and new product information.
 		input(type="email", placeholder="ENTER YOUR EMAIL")
 		button.clear-cta Subscribe
-	
+
 	.half-footer-item
 		ul
 			each(loop='page in contentful.textPages')
 				li: a(href="/{{ slugme(page.fields.footerLinkName.toLowerCase()) }}.html") {{ page.fields.footerLinkName }}
-			
+
 			li: a(href="/contacts.html") Contacts
 
 		img(src='/img/small-credit-cards-accepted.png')

@@ -2,9 +2,9 @@ extends(src='layout.sgr')
   block(name='content')
     header#banner(style="background-image: url( {{ contentful.headBanner[0].fields.image.fields.file.url }} )")
       #bannerGradient
-        div {{ consol.log(locals) }}
-          // h1 {{ contentful.headBanner[0].fields.headline }}
-          // p {{ contentful.headBanner[0].fields.subline }}
+        div
+          h1 {{ contentful.headBanner[0].fields.headline }}
+          p {{ contentful.headBanner[0].fields.subline }}
 
     section#products
       each(loop='fragrance of contentful.products')
@@ -17,4 +17,4 @@ extends(src='layout.sgr')
                 p.p-card-price €  {{ fragrance.fields.price }}
                 button.clear-cta Product Details
 
-    include(src='_footer.sgr')
+    include(src='includes/_footer.sgr')
