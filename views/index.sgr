@@ -2,12 +2,9 @@ extends(src='layout.sgr')
   block(name='content')
     header#banner(style="background-image: url( {{ contentful.headBanner[0].fields.image.fields.file.url }} )")
       #bannerGradient
-        div
-          h1 {{ contentful.headBanner[0].fields.headline }}
-          p {{ contentful.headBanner[0].fields.subline }}
-
-    //- h2 {{  }}
-    //- p {{ console.log(JSON.stringify(locals)) }}
+        div {{ consol.log(locals) }}
+          // h1 {{ contentful.headBanner[0].fields.headline }}
+          // p {{ contentful.headBanner[0].fields.subline }}
 
     section#products
       each(loop='fragrance of contentful.products')

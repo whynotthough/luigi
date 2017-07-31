@@ -5,8 +5,8 @@ extends(src='layout.sgr')
 			if(condition="page.fields.footerLinkName.toLowerCase().indexOf('privacy') >= 0 ")
 				script.
 					console.log(page.fields.headline)
-				//- h2.textPage page.fields.headline
-				//- article.textPage(md) page.fields.body
+				// h2.textPage page.fields.headline
+				// article.textPage(md) page.fields.body
 			else
 				script.
 					location = "/"
