@@ -4,7 +4,9 @@ block content
 	- var banner = contentful.headBanner[0]
 
 	header#banner(style="background-image: url(#{asset(banner.image)})")
-		#bannerGradient
+		iframe(width="100%" height="100%" src="https://www.youtube.com/embed/pX3xiOnOtTc?rel=0&amp;controls=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen)
+
+		//- #bannerGradient
 			div
 				h1= banner.headline
 				p= banner.subline

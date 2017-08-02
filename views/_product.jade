@@ -5,7 +5,7 @@ block content
 		header#bigphoto
 			//- img(src="#{entry.photos[0].fields.file.url + bigPhotoParams}", alt="")
 			//- - var bigPhotoParams = '?w=800&h=500&&q=85&fm=jpg&fl=progressive&fit=pad&bg=rgb:f2e7c9'
-			- var bigPhotoParams = '' //-'?w=600&h=400'
+			- var bigPhotoParams = '?w=700&q=85'
 			img(src="https:#{entry.photos[0].fields.file.url + bigPhotoParams}", alt="")
 
 		aside#description
