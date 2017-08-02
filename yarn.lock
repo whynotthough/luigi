@@ -5644,9 +5644,9 @@ reshape-retext@^1.0.1:
     retext "^5.0.0"
     when "^3.7.8"
 
-reshape-standard@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/reshape-standard/-/reshape-standard-3.0.1.tgz#dbaef3c67839ebdd7a316e1b3862a554b946e09f"
+reshape-standard@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/reshape-standard/-/reshape-standard-3.1.0.tgz#dc5131422a7b756a01308af580de1859013b6ffc"
   dependencies:
     markdown-it "^8.2.2"
     reshape-beautify "^0.1.2"
