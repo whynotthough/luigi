@@ -23,7 +23,7 @@ module.exports = {
           name: 'products',
           id: 'product',
           template: {
-            path: 'views/_product.sgr',
+            path: 'views/product.sgr',
             output: (e) => { return `products/${e.id}.html` }
           }
           // json: 'products.json'
