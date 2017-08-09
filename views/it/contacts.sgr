@@ -1,4 +1,4 @@
-extends(src='layout.sgr')
+extends(src='../layout.sgr')
 	block(name='nav')
 		include(src='includes/_nav.sgr')
 	block(name='content')
@@ -7,14 +7,14 @@ extends(src='layout.sgr')
 
 		#contact-details
 			div
-				h2 {{ contentful.contactPage[0].fields.officeHeadline }}
-				h3 {{ contentful.contactPage[0].fields.officeCTA }}
+				h2 {{ contentful.contactPage[0].fields.officeHeadlineIt }}
+				h3 {{ contentful.contactPage[0].fields.officeCtaIt }}
 				p {{ contentful.contactPage[0].fields.officeAddress }}
 			div
-				h2 {{ contentful.contactPage[0].fields.emailHeadline }}
-				h3 {{ contentful.contactPage[0].fields.emailCTA }}
+				h2 {{ contentful.contactPage[0].fields.emailHeadlineIt }}
+				h3 {{ contentful.contactPage[0].fields.emailCtaIt }}
 				a(href="mailto:{{ contentful.contactPage[0].fields.emailAddress }}") {{ contentful.contactPage[0].fields.emailAddress }}
 
 		include(src='includes/_footer.sgr')
 
-  include(src='includes/_googlemaps.sgr')
+  include(src='../includes/_googlemaps.sgr')

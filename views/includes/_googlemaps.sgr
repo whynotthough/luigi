@@ -1,0 +1,56 @@
+script.
+  // Google Maps settings for Contacts page
+  function initMap() {
+    var luigiborrelli = {
+      lat: {{ contentful.contactPage[0].fields.showroomCoordinates.lat }},
+      lng: {{ contentful.contactPage[0].fields.showroomCoordinates.lon }}
+    };
+    // var luigiborrelli = {lat: 45.467432, lng: 9.198415};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: luigiborrelli,
+
+      mapTypeControl: false,
+      navigationControl: false,
+      scrollwheel: false,
+      streetViewControl: false,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_CENTER
+      },
+
+      styles: [
+      {
+        "stylers": [
+        {
+          "saturation": -85
+        }
+        ]
+      },
+      {
+        "featureType": "poi.attraction",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "poi.business",
+        "elementType": "labels.text",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      }
+      ]
+
+    });
+    var marker = new google.maps.Marker({
+      position: luigiborrelli,
+      map: map,
+      icon: '{{ contentful.contactPage[0].fields.mapPinImage.fields.file.url }}'
+      });
+  }
+
+script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB510H3GIM2vaJHlTnumaT8L6dn95T_tMs&callback=initMap')

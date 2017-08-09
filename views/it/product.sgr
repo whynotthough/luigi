@@ -1,4 +1,4 @@
-extends(src='layout.sgr')
+extends(src='../layout.sgr')
 	block(name='nav')
 		include(src='includes/_nav.sgr')
 	block(name='mainId')
@@ -10,12 +10,12 @@ extends(src='layout.sgr')
 						img(src='{{ item.fields.photos[0].fields.file.url }}?w=700&q=85&fm=jpg&fl=progressive&bg=rgb:f2e7c9', alt='')
 
 					aside(id='description')
-						p(md) {{ item.fields.shortDescription }}
+						p(md) {{ item.fields.shortDescriptionIt }}
 
 					aside(id='lines-to-buy')
 						h2 {{ item.fields.name }}
 						p(id='subheadline') {{ item.fields.subname }}
-						h3 {{ item.fields.dominant }}
+						h3 {{ item.fields.dominantIt }}
 
 						span(id='price') € {{ item.fields.price }}
 						button(id='cta-buy-now' class='snipcart-add-item')(
@@ -23,20 +23,20 @@ extends(src='layout.sgr')
 							data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
 							data-item-price="{{ item.fields.price }}"
 							data-item-weight=""
-							data-item-url="/products/{{ item.fields.productUrl }}.html"
-							data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCta }}
-						p(id='cta-subline') {{ item.fields.buttonSubline }}
+							data-item-url="/it/products/{{ item.fields.productUrl }}.html"
+							data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCtaIt }}
+						p(id='cta-subline') {{ item.fields.buttonSublineIt }}
 
 						table
 							tr
-								td.pyramid-level Top notes:
-								td.pyramid-notes {{ item.fields.topNotes }}
+								td.pyramid-level Note di testa:
+								td.pyramid-notes {{ item.fields.topNotesIt }}
 							tr
-								td.pyramid-level Heart notes:
-								td.pyramid-notes {{ item.fields.heartNotes }}
+								td.pyramid-level Note di cuore:
+								td.pyramid-notes {{ item.fields.heartNotesIt }}
 							tr
-								td.pyramid-level Base notes:
-								td.pyramid-notes {{ item.fields.baseNotes }}
+								td.pyramid-level Note di fondo:
+								td.pyramid-notes {{ item.fields.baseNotesIt }}
 
 					#productBottomHalf
 						#thumbs
@@ -60,10 +60,10 @@ extends(src='layout.sgr')
 						article#on-product
 							#read-more-cta
 								a
-									button Read More
+									button Leggi di più
 									i.fa.fa-angle-down
 							#white-gradient-when-collapsed
-							#product-longread.lr-collapsed(md) {{ item.fields.longDescription }}
+							#product-longread.lr-collapsed(md) {{ item.fields.longDescriptionIt }}
 
 							// open and collapse an ARTICLE on Product Page
 							script.
@@ -72,13 +72,13 @@ extends(src='layout.sgr')
 								var gradient = document.querySelector("#white-gradient-when-collapsed");
 								more.addEventListener("click", function(){
 									if (longread.classList.contains("lr-collapsed")) {
-										more.innerHTML = '<button>Show Less</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
+										more.innerHTML = '<button>Mostra meno</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
 									} else {
-										more.innerHTML = '<button>Read More</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
+										more.innerHTML = '<button>Leggi di più</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
 									}
 									longread.classList.toggle("lr-collapsed");
 									gradient.classList.toggle("gradient-off");
 								});
 
 					#productFooter
-						include(src='./includes/_footer.sgr')
+						include(src='includes/_footer.sgr')

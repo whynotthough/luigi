@@ -30,11 +30,27 @@ module.exports = {
           }
         },
         {
+          name: 'productsIT',
+          id: 'product',
+          template: {
+            path: 'views/it/product.sgr',
+            output: (e) => { return `it/products/${e.fields.productUrl}.html` }
+          }
+        },
+        {
           name: 'textPages',
           id: 'textPage',
           template: {
             path: 'views/textpage.sgr',
             output: (e) => { return `${e.fields.footerUrl}.html` }
+          }
+        },
+        {
+          name: 'textPagesIT',
+          id: 'textPage',
+          template: {
+            path: 'views/it/textpage.sgr',
+            output: (e) => { return `it/${e.fields.footerUrl}.html` }
           }
         },
         {

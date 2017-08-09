@@ -1,4 +1,4 @@
-extends(src='layout.sgr')
+extends(src='../layout.sgr')
   block(name='nav')
     include(src='includes/_nav.sgr')
   block(name='content')
@@ -82,12 +82,12 @@ extends(src='layout.sgr')
 
       #bannerGradient
         div
-          h1 {{ contentful.headBanner[0].fields.headline }}
-          img(id='playbutton' src='img/play-button.png')
-          p {{ contentful.headBanner[0].fields.subline }}
+          h1 {{ contentful.headBanner[0].fields.headlineIt }}
+          img(id='playbutton' src='../img/play-button.png')
+          p {{ contentful.headBanner[0].fields.sublineIt }}
 
     section#products
-      each(loop='fragrance of contentful.products')
+      each(loop='fragrance of contentful.productsIT')
         .product-card-box-gradient
           .product-card(style="background-image: url( {{ fragrance.fields.cardPhoto.fields.file.url }} )")
             a(href="products/{{ fragrance.fields.productUrl.toLowerCase() }}.html")
@@ -95,6 +95,6 @@ extends(src='layout.sgr')
                 h2 {{ fragrance.fields.name }}
                 p.p-card-subtext {{ fragrance.fields.subname }}
                 p.p-card-price €  {{ fragrance.fields.price }}
-                button.clear-cta Product Details
+                button.clear-cta Dettagli
 
     include(src='includes/_footer.sgr')

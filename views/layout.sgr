@@ -19,11 +19,10 @@ html
       data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')
 
   body
-    include(src='includes/_nav.sgr')
+    block(name='nav')
     block(name='mainId')
       main(role='main' id='{{ pageId }}')
         block(name='content')
-        block(name='extraFooter')
 
     block(name='javascript')
       script(src='/js/main.js' defer)

@@ -1,20 +1,20 @@
 nav(id='sidenav')
-	a(id='logo', href="/"): img(id='middlelogo', src="/img/middle-logo-borrelli.svg", alt="")
+	a(id='logo', href="/it"): img(id='middlelogo', src="/img/middle-logo-borrelli.svg", alt="")
 	ul
 		li
 			a(id='globalsite', href="http://www.luigiborrelli.com")
 				span LuigiBorrelli.com
 				i(class='fa fa-external-link', style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
 
-		li: a(href="/") All Fragrances
+		li: a(href="/it") Profumi
 
 
 		each(loop='product of contentful.products')
-			li: a(href="/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
+			li: a(href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
 		li
 			a(class='mycart snipcart-checkout', href="#")
-				span My Cart
+				span Carrello
 				img(id='bagicon', src="/img/bag.svg", alt="")
 
 		li.social
@@ -41,19 +41,19 @@ nav(id='mobnav')
 			  document.querySelector("ul#mobmenu").classList.toggle("collapsed");
 			}
 
-		a(id='smalllogo', href="/")
+		a(id='smalllogo', href="/it")
 			img(src="/img/lb-small-logo.svg", alt="")
-		a(class='mycart snipcart-checkout' href="#")
+		a.mycart.snipcart-checkout(href="#")
 			img(src="/img/bag.svg", alt="")
 
 	ul#mobmenu.collapsed
 		li
 			a(id='globalsite', href="http://www.luigiborrelli.com") LuigiBorrelli.com
 				i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
-		li: a(class='mobmenu' href="/") All Fragrances
+		li: a.mobmenu(href="/it") Profumi
 
 		each(loop='product of contentful.products')
-			li: a(class='mobmenu' href="/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
+			li: a.mobmenu(href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
 		li.social
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
