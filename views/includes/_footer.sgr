@@ -7,8 +7,12 @@ footer
 	.half-footer-item
 		ul
 			each(loop='page in contentful.textPages')
-				li: a(href="/{{ slugme(page.fields.footerLinkName.toLowerCase()) }}.html") {{ page.fields.footerLinkName }}
+				// li {{ console.log(page.fields.pdf) }}
+				if(condition="!page.fields.pdf")
+					li: a(href="/{{ page.fields.footerUrl }}.html") {{ page.fields.headline }}
+				else
+					li: a(href="{{ page.fields.pdf.fields.file.url }}" target='_blank') {{ page.fields.headline }}
 
-			li: a(href="/contacts.html") Contacts
+			li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}.html") {{ contentful.contactPage[0].fields.pageHeadline }}
 
 		img(src='/img/small-credit-cards-accepted.png')

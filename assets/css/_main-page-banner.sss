@@ -1,32 +1,52 @@
-#banner 
-  /*height: 46vh*/
-  height: 40vh
-  /* if you have a 70px navbar => height: calc(100vh - 70px) */ 
+#banner
+  /*if you have a 70px navbar => height: calc(100vh - 70px) */
+  height: 67vh
   background-size: cover
   background-position: center center
+  position: relative
 
-#bannerGradient
-  height: 100%
-  width:  100%
-  display: flex
-  align-items: center
-  justify-content: space-around
-  text-align: center 
-  background: linear-gradient(135deg, 
-                            rgba(255,255,255,0.6) 0%, 
-                            rgba(255,255,255,0.7) 50%)
+  & #bannerGradient
+    height: 100%
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-around
+    text-align: center
+    background: linear-gradient(-181deg,
+                              rgba(255,255,255,0.85) 0%,
+                              rgba(255,255,255,0.6) 97%)
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    /* play button style */
+    & img 
+      width: 80px
+      height: auto
+      cursor: pointer
 
-#banner h1, #banner p 
-  color: --lbgreen
+  & #bannerGradient, & #player
+    transition: all 0.7s
+
+  & .zero-opacity
+    opacity: 0
+  & .hidden
+    z-index: -1
+    display: none
+
+
+#banner h1, #banner p
+  color: var(--lbgreen)
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2)
   padding: 1px 20px
-  
 
-#banner h1 
+
+#banner h1
   font-size: 40px
   line-height: 44px
   /*padding: 1px 20px*/
-#banner p 
+#banner p
   font-size: 25px
   font-weight: lighter
   color: #222222

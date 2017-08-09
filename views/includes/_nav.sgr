@@ -8,8 +8,9 @@ nav(id='sidenav')
 
 		li: a(href="/") All Fragrances
 
+
 		each(loop='product of contentful.products')
-			li: a(href="/products/{{ slugme(product.fields.name.toLowerCase()) }}.html") {{ product.fields.name }}
+			li: a(href="/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
 		li
 			a(class='mycart snipcart-checkout', href="#")
@@ -21,6 +22,10 @@ nav(id='sidenav')
 
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
 				i(class="fa fa-instagram")
+
+		// li {{ JSON.stringify(locals.foo) }}
+		// li {{ printMe('test') }}
+		// li {{ var foo }}
 
 
 nav(id='mobnav')
@@ -48,7 +53,7 @@ nav(id='mobnav')
 		li: a.mobmenu(href="/") All Fragrances
 
 		each(loop='product of contentful.products')
-			li: a.mobmenu(href="/products/ {{ slugme(product.fields.name.toLowerCase()) }}.html") {{ product.fields.name }}
+			li: a.mobmenu(href="/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
 		li.social
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")

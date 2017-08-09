@@ -23,7 +23,7 @@
     "ava": "^0.21.0",
     "rimraf": "^2.6.1",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.2"
+    "standard": "^10.0.3"
   },
   "homepage": "https://github.com/whynotthough/luigi",
   "main": "app.js",
