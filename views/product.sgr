@@ -18,14 +18,15 @@ extends(src='layout.sgr')
 						h3 {{ item.fields.dominant }}
 
 						span(id='price') € {{ item.fields.price }}
-						button(id='cta-buy-now' class='snipcart-add-item')(
-							data-item-id="1"
-							data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
-							data-item-price="{{ item.fields.price }}"
-							data-item-weight=""
-							data-item-url="/products/{{ item.fields.productUrl }}.html"
-							data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCta }}
-						p(id='cta-subline') {{ item.fields.buttonSubline }}
+						.btn-w-subline
+							button(id='cta-buy-now' class='snipcart-add-item')(
+								data-item-id="1"
+								data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
+								data-item-price="{{ item.fields.price }}"
+								data-item-weight=""
+								data-item-url="/products/{{ item.fields.productUrl }}.html"
+								data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCta }}
+							p(id='cta-subline') {{ item.fields.buttonSubline }}
 
 						table
 							tr

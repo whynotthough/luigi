@@ -17,11 +17,15 @@ nav(id='sidenav')
 				span My Cart
 				img(id='bagicon', src="/img/bag.svg", alt="")
 
-		li.social
+		li(class='social')
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
 
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
 				i(class="fa fa-instagram")
+
+		li(class='lang')
+			a(class='lang-option active') EN
+			a(class='lang-option') IT
 
 		// li {{ JSON.stringify(locals.foo) }}
 		// li {{ printMe('test') }}
@@ -55,6 +59,10 @@ nav(id='mobnav')
 		each(loop='product of contentful.products')
 			li: a(class='mobmenu' href="/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
-		li.social
+		li(class='social')
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
+
+		li(class='lang')
+			a(class='lang-option active') EN
+			a(class='lang-option') IT

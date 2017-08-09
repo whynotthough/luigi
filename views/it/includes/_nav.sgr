@@ -23,6 +23,10 @@ nav(id='sidenav')
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank')
 				i(class="fa fa-instagram")
 
+		li(class='lang')
+			a(class='lang-option') EN
+			a(class='lang-option active') IT
+
 		// li {{ JSON.stringify(locals.foo) }}
 		// li {{ printMe('test') }}
 		// li {{ var foo }}
@@ -43,18 +47,22 @@ nav(id='mobnav')
 
 		a(id='smalllogo', href="/it")
 			img(src="/img/lb-small-logo.svg", alt="")
-		a.mycart.snipcart-checkout(href="#")
+		a(class='mycart snipcart-checkout', href="#")
 			img(src="/img/bag.svg", alt="")
 
 	ul#mobmenu.collapsed
 		li
 			a(id='globalsite', href="http://www.luigiborrelli.com") LuigiBorrelli.com
 				i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
-		li: a.mobmenu(href="/it") Profumi
+		li: a(class='mobmenu' href="/it") Profumi
 
 		each(loop='product of contentful.products')
-			li: a.mobmenu(href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
+			li: a(class='mobmenu' href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
 
 		li.social
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
+
+		li(class='lang')
+			a(class='lang-option') EN
+			a(class='lang-option active') IT
