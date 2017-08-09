@@ -11,7 +11,6 @@ const env = process.env.NODE_ENV
 const slugify = require('slugify')
 const locals = {}
 
-
 module.exports = {
 
   plugins: [
@@ -72,7 +71,8 @@ module.exports = {
     parser: sugarml,
     // locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } }, // original spike template ver.
     // locals: () => locals, // spike-contentful ver.
-    locals: (ctx) => Object.assign({ pageId: pageId(ctx), slugme: slugify, foo: 'bar' }, locals), // gitter fix ver.
+    // locals: (ctx) => Object.assign({ pageId: pageId(ctx), slugme: slugify, foo: 'bar' }, locals), // gitter fix ver.
+    locals: (ctx) => Object.assign(locals, { pageId: pageId(ctx), slugme: slugify, foo: 'bar' }), // gitter fix ver.
     minify: env === 'production'
   }),
   postcss: cssStandards({

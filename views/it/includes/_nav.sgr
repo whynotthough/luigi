@@ -27,11 +27,6 @@ nav(id='sidenav')
 			a(class='lang-option') EN
 			a(class='lang-option active') IT
 
-		// li {{ JSON.stringify(locals.foo) }}
-		// li {{ printMe('test') }}
-		// li {{ var foo }}
-
-
 nav(id='mobnav')
 	#topbar
 		#burger(onclick="toggleBurger(this)")

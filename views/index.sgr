@@ -1,6 +1,7 @@
 extends(src='layout.sgr')
   block(name='nav')
     include(src='includes/_nav.sgr')
+
   block(name='content')
     header(id='banner' style="background-image: url({{ contentful.headBanner[0].fields.image.fields.file.url }})")
 
