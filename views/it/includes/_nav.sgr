@@ -10,7 +10,7 @@ nav(id='sidenav')
 
 
 		each(loop='product of contentful.products')
-			li: a(href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
+			li: a(href="/it/products/{{ product.fields.productUrl }}") {{ product.fields.name }}
 
 		li
 			a(class='mycart snipcart-checkout', href="#")
@@ -52,7 +52,7 @@ nav(id='mobnav')
 		li: a(class='mobmenu' href="/it") Profumi
 
 		each(loop='product of contentful.products')
-			li: a(class='mobmenu' href="/it/products/{{ product.fields.productUrl }}.html") {{ product.fields.name }}
+			li: a(class='mobmenu' href="/it/products/{{ product.fields.productUrl }}") {{ product.fields.name }}
 
 		li.social
 			a(href='https://www.facebook.com/LuigiBorrelliNapoli1957/' target='_blank'): i(class="fa fa-facebook")

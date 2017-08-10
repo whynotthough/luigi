@@ -66,7 +66,7 @@ module.exports = {
 
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock'],
+  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', 'package-lock.json'],
   reshape: htmlStandards({
     parser: sugarml,
     // locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } }, // original spike template ver.

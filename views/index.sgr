@@ -91,7 +91,7 @@ extends(src='layout.sgr')
       each(loop='fragrance of contentful.products')
         .product-card-box-gradient
           .product-card(style="background-image: url( {{ fragrance.fields.cardPhoto.fields.file.url }} )")
-            a(href="products/{{ fragrance.fields.productUrl.toLowerCase() }}.html")
+            a(href="products/{{ fragrance.fields.productUrl.toLowerCase() }}")
               .product-card-content
                 h2 {{ fragrance.fields.name }}
                 p.p-card-subtext {{ fragrance.fields.subname }}
