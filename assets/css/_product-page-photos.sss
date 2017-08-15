@@ -1,23 +1,64 @@
-#bigphoto > img
-	width: 100%
-	margin-bottom: 5px
-	background: linear-gradient(160deg,
-																		rgba(242, 232, 200,0.1) 0%,
-																		rgba(242, 232, 200,0.2) 50%)
+#bigphoto
+	height: 440px
+	position: relative
 
-#thumbs
-	text-align: center
+	& .gal-btn
+		width: 60px
+		height: auto
+		opacity: 0.6
+		cursor: pointer
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
 
-#thumbs > img
-	max-width: 115px
-	width: 15%
-	padding: 5px
-	transition: all 0.3s
-	cursor: pointer
-	margin: 0
-	display: inline
+		&:hover
+			opacity: 1
 
-#thumbs > img:hover
-	opacity: 0.6
-	margin: 0
-	display: inline
+	& #left-btn
+		left: 1%
+	& #right-btn
+		right: 1%
+
+
+	& #big-photo-wraper 
+		height: 100%
+		text-align: center
+
+
+		/* background: lightblue */
+
+		& img
+			max-height: 100%
+			max-width: 100%
+			margin: 0 auto
+			/* margin-bottom: 5px */
+			background: linear-gradient(160deg,
+																				rgba(242, 232, 200,0.1) 0%,
+																				rgba(242, 232, 200,0.2) 50%)
+
+		& .zoomImg
+			/* width: 100% !important */
+			/* height: auto !important */
+
+#productBottomHalf
+	border-top: 1px solid rgba(198,197,197,0.3)
+
+	& #thumbs
+		text-align: center
+
+		& .current
+			opacity: 1
+
+		& img
+			max-width: 115px
+			width: 15%
+			padding: 5px
+			transition: all 0.3s
+			cursor: pointer
+			margin: 0
+			display: inline
+			opacity: 0.6
+
+			&:hover
+				opacity: 1
+				display: inline

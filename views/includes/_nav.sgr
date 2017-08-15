@@ -25,7 +25,10 @@ nav(id='sidenav')
 
 		li(class='lang')
 			a(class='lang-option active') EN
-			a(class='lang-option') IT
+			a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT
+
+		include(src='includes/_lang-switcher.sgr')
+
 
 nav(id='mobnav')
 	#topbar
@@ -60,4 +63,4 @@ nav(id='mobnav')
 
 		li(class='lang')
 			a(class='lang-option active') EN
-			a(class='lang-option') IT
+			a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT

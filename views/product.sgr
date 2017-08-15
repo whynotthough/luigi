@@ -6,8 +6,9 @@ extends(src='layout.sgr')
 			block(name='content')
 				#page
 					header(id='bigphoto')
-						// ?w=800&h=500&&q=85&fm=jpg&fl=progressive&fit=pad&bg=rgb:f2e7c9
-						img(src='{{ item.fields.photos[0].fields.file.url }}?w=700&q=85&fm=jpg&fl=progressive&bg=rgb:f2e7c9', alt='')
+						#big-photo-wraper: img(src='{{ item.fields.photos[0].fields.file.url }}?w=700&q=85&fm=jpg&fl=progressive&bg=rgb:f2e7c9', alt='')
+						img(src='/img/left-button.png' class='gal-btn' id='left-btn')
+						img(src='/img/right-button.png' class='gal-btn' id='right-btn')
 
 					aside(id='description')
 						p(md) {{ item.fields.shortDescription }}
@@ -43,20 +44,6 @@ extends(src='layout.sgr')
 						#thumbs
 							each(loop='photo of item.fields.photos')
 								img(src='{{ photo.fields.file.url }}?w=200&h=200&&q=100&fm=jpg&fl=progressive&fit=thumb&bg=rgb:fcfaf5', alt="")
-							// photo gallery switcher
-							script.
-								var thumbs = document.querySelectorAll("#thumbs > img");
-								var bigPhoto = document.querySelector("#bigphoto > img");
-								(function bigPhotoSwitcher() {
-									thumbs.forEach(function(thumb){
-										thumb.addEventListener("click", function(){
-											var thumbParamsPosition = thumb.src.indexOf('?');
-											var newAddrForBig = thumb.src.slice(0, thumbParamsPosition);
-											bigPhoto.src = newAddrForBig // '?w=600&h=400';
-											// console.log(bigPhoto.src)
-										})
-									})
-								})();
 
 						article#on-product
 							#read-more-cta
@@ -65,21 +52,6 @@ extends(src='layout.sgr')
 									i.fa.fa-angle-down
 							#white-gradient-when-collapsed
 							#product-longread.lr-collapsed(md) {{ item.fields.longDescription }}
-
-							// open and collapse an ARTICLE on Product Page
-							script.
-								var more = document.querySelector("#read-more-cta a");
-								var longread = document.querySelector("#product-longread");
-								var gradient = document.querySelector("#white-gradient-when-collapsed");
-								more.addEventListener("click", function(){
-									if (longread.classList.contains("lr-collapsed")) {
-										more.innerHTML = '<button>Show Less</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
-									} else {
-										more.innerHTML = '<button>Read More</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
-									}
-									longread.classList.toggle("lr-collapsed");
-									gradient.classList.toggle("gradient-off");
-								});
 
 					#productFooter
 						include(src='./includes/_footer.sgr')
