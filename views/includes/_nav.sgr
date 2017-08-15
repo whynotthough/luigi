@@ -25,7 +25,10 @@ nav(id='sidenav')
 
 		li(class='lang')
 			a(class='lang-option active') EN
-			a(class='lang-option') IT
+			a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT
+
+    include(src='includes/_lang-switcher.sgr')
+
 
 nav(id='mobnav')
 	#topbar
@@ -33,7 +36,6 @@ nav(id='mobnav')
 			.bar1
 			.bar2
 			.bar3
-
 		script.
 			function toggleBurger(x) {
 			  x.classList.toggle("change");
@@ -59,5 +61,5 @@ nav(id='mobnav')
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
 
 		li(class='lang')
-			a(class='lang-option active') EN
-			a(class='lang-option') IT
+      a(class='lang-option active') EN
+      a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT

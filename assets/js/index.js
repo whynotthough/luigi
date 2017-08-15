@@ -5,25 +5,40 @@
 // }
 
 
-// LANGUAGE HANDLER
-var langOptions = document.querySelectorAll('.lang-option')
-langOptions.forEach(function(lo){
-  lo.addEventListener('click', function(){
-    var clickedLang = lo.innerHTML.toLowerCase(),
-        currPath = window.location.pathname,
-        newPath
 
-    if (lo.classList.value.indexOf('active') < 0){
-      if (clickedLang === 'en'){
-        newPath = currPath.slice(3,currPath.length)
-        location.assign(newPath)
-        // console.log(newPath)
-      } else if (clickedLang === 'it') {
-        newPath = '/' + clickedLang.concat(currPath)
-        location.assign(newPath)
-        // console.log(newPath.concat(currPath))
-      }
-    }
+// IMAGE ZOOM
+const jqueryZoom = require('jquery-zoom')
+// console.log(jqueryZoom)
+$(document).ready(function(){
+  $('#big-photo-wraper').zoom();
+  // console.log($('#big-photo-wraper'))
+});
 
+
+// PHOTO GALLERY SWITCHER
+var thumbs = document.querySelectorAll("#thumbs > img");
+var bigPhoto = document.querySelector("#bigphoto > img");
+(function bigPhotoSwitcher() {
+  thumbs.forEach(function(thumb){
+    thumb.addEventListener("click", function(){
+      var thumbParamsPosition = thumb.src.indexOf('?');
+      var newAddrForBig = thumb.src.slice(0, thumbParamsPosition);
+      bigPhoto.src = newAddrForBig // '?w=600&h=400';
+      // console.log(bigPhoto.src)
+    })
   })
-})
+})();
+
+// OPEN AND COLLAPSE AN ARTICLE ON PRODUCT PAGE
+var more = document.querySelector("#read-more-cta a");
+var longread = document.querySelector("#product-longread");
+var gradient = document.querySelector("#white-gradient-when-collapsed");
+more.addEventListener("click", function(){
+  if (longread.classList.contains("lr-collapsed")) {
+    more.innerHTML = '<button>Show Less</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
+  } else {
+    more.innerHTML = '<button>Read More</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
+  }
+  longread.classList.toggle("lr-collapsed");
+  gradient.classList.toggle("gradient-off");
+});

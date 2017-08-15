@@ -1,4 +1,39 @@
 #page
+  padding-top: 3%
+  display: grid
+  grid-template-columns: 16fr 8fr 1fr
+  grid-template-rows: auto auto auto auto auto
+  grid-template-areas:
+    "photo lines-to-buy r-gutter"
+    "photo description r-gutter"
+    "thumbs description r-gutter"
+    "story description r-gutter"
+    "footer footer footer"
+
+  & #bigphoto
+    grid-area: photo
+    overflow: hidden
+    margin: 0 3%
+
+  & #lines-to-buy
+    grid-area: lines-to-buy
+
+  & #thumbs
+    grid-area: thumbs
+
+  & #description
+    grid-area: description
+
+  & .r-gutter
+    grid-area: r-gutter
+
+  & #on-product
+    grid-area: story
+
+  & #productFooter
+    grid-area: footer
+
+/*#page
 	display: flex
 	flex-flow: wrap
 	padding-top: 3%
@@ -25,4 +60,4 @@
 #productFooter
 	order: 5
 	flex: 1 1 100%
-	padding-left: 3%
+	padding-left: 3%*/

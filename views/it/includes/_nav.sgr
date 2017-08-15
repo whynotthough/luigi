@@ -24,8 +24,11 @@ nav(id='sidenav')
 				i(class="fa fa-instagram")
 
 		li(class='lang')
-			a(class='lang-option') EN
-			a(class='lang-option active') IT
+      a(class='lang-option' href='/' onclick='lngSwitcher(this); return false;') EN
+      a(class='lang-option active') IT
+
+    include(src='../includes/_lang-switcher.sgr')
+
 
 nav(id='mobnav')
 	#topbar
@@ -59,5 +62,5 @@ nav(id='mobnav')
 			a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
 
 		li(class='lang')
-			a(class='lang-option') EN
-			a(class='lang-option active') IT
+      a(class='lang-option' href='/' onclick='lngSwitcher(this); return false;') EN
+      a(class='lang-option active') IT

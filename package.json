@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/whynotthough/luigi/issues",
   "dependencies": {
+    "jquery-zoom": "^1.7.20",
     "reshape-standard": "^3.1.0",
     "slugify": "^1.1.0",
     "spike": "^2.2.0",
