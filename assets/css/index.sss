@@ -15,128 +15,132 @@
 
 
 html, h1, h2, h3
-	color: var(--lbblack)
-	line-height: 20px
-	font-weight: 400
-	-ms-text-size-adjust: 100%
-	-webkit-text-size-adjust: 100%
-	-webkit-font-smoothing: antialiased
+  color: var(--lbblack)
+  line-height: 20px
+  font-weight: 400
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
 
 body
-	margin: 0
-	font-family: 'Raleway', sans-serif
-	font-size: 14px
+  margin: 0
+  font-family: 'Raleway', sans-serif
+  font-size: 14px
 
 main
-	margin-left: 250px
-	transition: all 0.5s
+  margin-left: 250px
+  transition: all 0.5s
 
 nav > ul, footer ul
-	text-transform: uppercase
-	list-style: none
+  text-transform: uppercase
+  list-style: none
 
 a
-	text-decoration: none
+  text-decoration: none
 
 
 h2
-	color: var(--lbgreen)
-	font-size: 30px
-	letter-spacing: 0
-	text-transform: uppercase
-	text-shadow: 0 1px 2px rgba(0,0,0,0.1)
-	margin-bottom: 0
-	margin-top: 0
-	padding-top: 2%
+  color: var(--lbgreen)
+  font-size: 30px
+  letter-spacing: 0
+  text-transform: uppercase
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1)
+  margin-bottom: 0
+  margin-top: 0
+  padding-top: 2%
 
 
 .clear-cta
-	color: var(--lbgreen)
-	font-family: 'Raleway', sans-serif
-	font-weight: 500
-	font-size: 16px
-	letter-spacing: 0
-	line-height: 35px
-	outline: none
-	cursor: pointer
-	background: rgba(255,255,255,0.00)
-	border: 1px solid var(--lbgreen)
-	border-radius: 1px
-	opacity: 0.9
-	box-shadow: 0 1px 2px rgba(0,0,0,0.1)
-	padding: 2px 20px
+  color: var(--lbgreen)
+  font-family: 'Raleway', sans-serif
+  font-weight: 500
+  font-size: 16px
+  letter-spacing: 0
+  line-height: 35px
+  outline: none
+  cursor: pointer
+  background: rgba(255,255,255,0.00)
+  border: 1px solid var(--lbgreen)
+  border-radius: 1px
+  opacity: 0.9
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1)
+  padding: 2px 20px
 
 
 /*MEDIA QUERIES*/
 @media all and (max-width: 1100px)
 
-	article.textPage, h2.textPage
-		margin: 0 2.5%
+  article.textPage, h2.textPage
+    margin: 0 2.5%
 
-	#sidenav
-		width: 0
+  #sidenav
+    width: 0
 
-	#mobnav
-		height: auto
+  #mobnav
+    height: auto
 
-	main
-		margin-left: 0
-		margin-top: 60px
+  main
+    margin-left: 0
+    margin-top: var(--topNavH)
 
-	#page
-		margin-top: 60px
+  #page
+    margin-top: var(--topNavH)
 
 
 /* fix for small mob screens to let to scroll down the product page */
 @media all and (max-width: 330px)
-	#bigphoto
-		height: 350px
+  #bigphoto
+    height: 300px
+
+@media all and (max-height: 400px)
+  #bigphoto
+    height: 240px
 
 
 @media all and (max-width: 768px)
 
-	article.textPage
-		column-count: 1
+  article.textPage
+    column-count: 1
 
-	article.textPage, h2.textPage
-		margin: 0 5%
+  article.textPage, h2.textPage
+    margin: 0 5%
 
-	#banner
-		height: 300px
-		& h1
-			margin: 8px auto
+  #banner
+    height: 300px
+    & h1
+      margin: 8px auto
 
 
-	#page, footer
-		flex-direction: column
+  #page, footer
+    flex-direction: column
 
-	#bigphoto, #lines-to-buy, #description, #productBottomHalf, #productFooter, #email-form, footer ul
-		order: 0
+  #bigphoto, #lines-to-buy, #description, #productBottomHalf, #productFooter, #email-form, footer ul
+    order: 0
 
-	footer ul
-		border: 0
+  footer ul
+    border: 0
 
-	#thumbs
-		display: none
-	#productBottomHalf
-		border-top: none
+  #thumbs
+    display: none
+  #productBottomHalf
+    border-top: none
 
-	#productFooter
-		padding-left: 0
+  #productFooter
+    padding-left: 0
 
-	#lines-to-buy
-		text-align: center
+  #lines-to-buy
+    text-align: center
 
-	#cta-subline
-		padding-left: 0
+  #cta-subline
+    padding-left: 0
 
-	#lines-to-buy > table
-		margin: 0 auto
-		text-align: left
+  #lines-to-buy > table
+    margin: 0 auto
+    text-align: left
 
-	#lines-to-buy > h3
-		margin: 3% 0 3% 0
+  #lines-to-buy > h3
+    margin: 3% 0 3% 0
 
-	#on-product, #description
-		font-size: 14px
-		line-height: 18px
+  #on-product, #description
+    font-size: 14px
+    line-height: 18px

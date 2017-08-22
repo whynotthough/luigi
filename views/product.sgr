@@ -5,7 +5,7 @@ extends(src='layout.sgr')
 		main(role='main' id='{{ item.fields.productUrl }}')
 			block(name='content')
 				#page
-					header(id='bigphoto')
+					header(id='bigphoto' class='full-zoom')
 						#big-photo-wraper: img(src='{{ item.fields.photos[0].fields.file.url }}?w=700&q=85&fm=jpg&fl=progressive&bg=rgb:f2e7c9', alt='')
 						img(src='/img/left-button.png' class='gal-btn' id='left-btn')
 						img(src='/img/right-button.png' class='gal-btn' id='right-btn')

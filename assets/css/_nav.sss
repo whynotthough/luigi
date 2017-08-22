@@ -1,118 +1,142 @@
 #sidenav
-	margin-top: 30px
-	height: 100%
-	width: 250px
-	position: fixed
-	overflow-x: hidden
-	transition: all 0.5s
+  margin-top: 30px
+  height: 100%
+  width: 250px
+  position: fixed
+  overflow-x: hidden
+  transition: all 0.5s
 
 #sidenav > #logo
-	max-width: 220px
-	margin-left: 40px
+  max-width: 220px
+  margin-left: 40px
 
 #sidenav > ul
-	margin-top: 0
-	text-align: left
+  margin-top: 0
+  text-align: left
 
 /*to prevent text to have more than one line when collapse sidenav*/
 #sidenav > ul > li
-	min-width: 250px
+  min-width: 250px
 
 nav a
-	font-weight: 500
-	font-size: 14px
-	line-height: 30px
-	color: rgba(27,71,44,0.9)
+  font-weight: 500
+  font-size: 14px
+  line-height: 30px
+  color: rgba(27,71,44,0.9)
 
 #globalsite, .mycart
-	line-height: 80px
+  line-height: 80px
 .mycart
-	display: flex
-	align-items: center
-	max-width: 100px
+  display: flex
+  align-items: center
+  max-width: 100px
 
 #bagicon
-	margin-left: 10px
-	margin-bottom: 8px
+  margin-left: 10px
+  margin-bottom: 8px
 
 .social a i
-	font-weight: lighter
-	font-size: 17px
-	color: #8D8D8D
-	opacity: 0.8
-	margin: 1em 1.5em 1em 0
+  font-weight: lighter
+  font-size: 17px
+  color: #8D8D8D
+  opacity: 0.8
+  margin: 1em 0 1em 0
+  margin-right: 1.5em
 
 .lang
-	margin-top: 2em
+  margin-top: 2em
 
-	& .active
-		opacity: 1
-		cursor: default
+  & :first-of-type
+    margin-right: 1.2em
 
-	& a
-		margin-right: 1.2em
-		opacity: 0.4
-		cursor: pointer
-	& a:hover
-		opacity: 1
+  & .active
+    opacity: 1
+    cursor: default
+
+  & a
+    opacity: 0.4
+    cursor: pointer
+  & a:hover
+    opacity: 1
 
 #mobnav
-	z-index: 100
-	top: 0
-	position: fixed
-	height: 0
-	overflow: hidden
-	width: 100%
-	background: #F2E7C9
-	transition: all 0.5s
+  z-index: 100
+  height: 0
+  position: fixed
+  top: 0
+  overflow: hidden
+  width: 100%
+  background: #F2E7C9
+  transition: all 0.3s ease-in-out
+
+.mob-nav-up
+  top: calc(var(--topNavH)*-1) !important
+
+.mob-nav-down
+  top: 0
 
 #topbar
-	height: 60px
-	display: flex
-	justify-content: space-between
-	align-items: center
-	// transition: all 0.5s
+  height: var(--topNavH)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  // transition: all 0.5s
 
 #topbar > #burger, #topbar > .mycart.snipcart-checkout
-	padding: 0 25px
+  padding: 0 25px
 
 #smalllogo > img
-	padding-top: 8px
-
+  max-height: calc(var(--topNavH)*0.8)
+  position: absolute
+  top: calc(var(--topNavH)/2)
+  left: 50%
+  transform: translate(-50%, -50%)
 #burger
-	display: inline-block
-	cursor: pointer
+  display: inline-block
+  cursor: pointer
 .bar1, .bar2, .bar3
-	width: 25px
-	height: 1px
-	background-color: rgba(27,71,44,0.9)
-	margin: 6px 0
-	transition: 0.5s
+  width: 25px
+  height: 1px
+  background-color: rgba(27,71,44,0.9)
+  margin: 6px 0
+  transition: 0.5s
 
 .change .bar1
-	-webkit-transform: rotate(-45deg) translate(-5px, 5px)
-	transform: rotate(-45deg) translate(-5px, 5px)
+  -webkit-transform: rotate(-45deg) translate(-5px, 5px)
+  transform: rotate(-45deg) translate(-5px, 5px)
 .change .bar2
-	opacity: 0
+  opacity: 0
 .change .bar3
-	-webkit-transform: rotate(45deg) translate(-5px, -5px)
-	transform: rotate(45deg) translate(-5px, -5px)
+  -webkit-transform: rotate(45deg) translate(-5px, -5px)
+  transform: rotate(45deg) translate(-5px, -5px)
 
-.collapsed
-	margin: 0
-	height: 0
-	overflow: hidden
 
 #mobmenu
-	text-align: center
-	-webkit-padding-start: 0
-	transition: all 0.5s
+  text-align: center
+  -webkit-padding-start: 0
+  transition: all 0.3s
+  display: absolute
+  /* display: absolute */
+  top: 0
+  /* left: 0 */
+  /* width: 100% */
+  height: 100vh
+
+.collapsed
+  margin: 0
+  height: 0
+  /* overflow: hidden */
+  display: none
 
 #mobmenu > li > a
-	font-size: 20px
+  font-size: 20px
 
 #mobmenu > .social
-	margin-left: 1.5em
+  margin-left: 1.5em
 
 a.mobmenu
-	line-height: 40px
+  line-height: 40px
+
+
+.noscroll
+  overflow: hidden
