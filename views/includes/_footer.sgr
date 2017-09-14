@@ -6,13 +6,13 @@ footer
 
 	.half-footer-item
 		ul
-			// each(loop='page in contentful.textPages')
-			// 	// li {{ console.log(page.fields.pdf) }}
-			// 	if(condition="!page.fields.pdf")
-			// 		li: a(href="/{{ page.fields.footerUrl }}") {{ page.fields.headline }}
-			// 	else
-			// 		li: a(href="{{ page.fields.pdf.fields.file.url }}" target='_blank') {{ page.fields.headline }}
-//
-			// li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadline }}
+			each(loop='page in contentful.textPages')
+				// li {{ console.log(page.fields.pdf) }}
+				if(condition="!page.fields.pdf")
+					li: a(href="/{{ page.fields.footerUrl }}") {{ page.fields.headline }}
+				else
+					li: a(href="{{ page.fields.pdf.fields.file.url }}" target='_blank') {{ page.fields.headline }}
+
+			li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadline }}
 
 		img(src='/img/small-credit-cards-accepted.png')
