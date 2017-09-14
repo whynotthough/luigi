@@ -1,20 +1,42 @@
 {
-  "name": "",
-  "description": "",
+  "name": "luigi",
+  "description": "Online Boutique",
+  "version": "0.0.1",
+  "author": "whynotthough",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/whynotthough/luigi/issues",
   "dependencies": {
-    "autoprefixer-stylus": "0.9.x",
-    "axis": "0.6.x",
-    "coffee-script": "1.x",
-    "css-pipeline": "0.3.x",
-    "jade": "1.x",
-    "js-pipeline": "0.2.x",
-    "jstransformer-marked": "1.x",
-    "marked": "^0.3.6",
-    "roots": "^5.1.0",
-    "roots-collections": "^0.3.3",
-    "roots-contentful": "0.0.9",
-    "rupture": "0.6.x",
+    "jquery-zoom": "^1.7.20",
+    "reshape-standard": "^3.1.0",
     "slugify": "^1.1.0",
-    "stylus": "0.54.x"
+    "spike": "^2.2.0",
+    "spike-contentful": "^2.0.0",
+    "spike-css-standards": "^3.0.0",
+    "spike-js-standards": "^2.0.2",
+    "spike-optimize": "^0.1.2",
+    "spike-page-id": "^1.0.0",
+    "sugarml": "^0.6.0",
+    "sugarss": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "rimraf": "^2.6.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "homepage": "https://github.com/whynotthough/luigi",
+  "main": "app.js",
+  "private": true,
+  "repository": "https://github.com/whynotthough/luigi",
+  "scripts": {
+    "lint": "standard | snazzy",
+    "precommit": "npm run lint -s",
+    "pretest": "npm run lint -s",
+    "test": "NODE_ENV=test ava",
+    "start": "spike watch",
+    "build": "spike compile",
+    "prod": "NODE_ENV=production spike compile -e production"
   }
 }

@@ -1,0 +1,28 @@
+extends(src='layout.sgr')
+  block(name='nav')
+    include(src='includes/_nav.sgr')
+
+  block(name='content')
+    header(id='banner' style="background-image: url({{ contentful.headBanner[0].fields.image.fields.file.url }})")
+
+      // 1. The <iframe> (and video player) will replace this <div> tag.
+      include(src='includes/_video.sgr')
+
+      #bannerGradient
+        div
+          h1 {{ contentful.headBanner[0].fields.headline }}
+          img(id='playbutton' src='img/play-button.png')
+          p {{ contentful.headBanner[0].fields.subline }}
+
+    section#products
+      each(loop='fragrance of contentful.products')
+        .product-card-box-gradient
+          .product-card(style="background-image: url( {{ fragrance.fields.cardPhoto.fields.file.url }}?w=300&q=&fm=png )")
+            a(href="products/{{ fragrance.fields.productUrl.toLowerCase() }}")
+              .product-card-content
+                h2 {{ fragrance.fields.name }}
+                p.p-card-subtext {{ fragrance.fields.subname }}
+                p.p-card-price €  {{ fragrance.fields.price }}
+                button.clear-cta Product Details
+
+    include(src='includes/_footer.sgr')

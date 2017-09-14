@@ -1,0 +1,9 @@
+extends(src='layout.sgr')
+	block(name='nav')
+		include(src='includes/_nav.sgr')
+	block(name='mainId')
+		main(role='main' id='{{ item.fields.footerUrl }}')
+			block(name='content')
+				h2.textPage {{ item.fields.headline }}
+				article.textPage(md) {{ item.fields.body }}
+				include(src='includes/_footer.sgr')

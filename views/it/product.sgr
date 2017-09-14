@@ -1,0 +1,58 @@
+extends(src='../layout.sgr')
+	block(name='nav')
+		include(src='includes/_nav.sgr')
+	block(name='mainId')
+		main(role='main' id='{{ item.fields.productUrl }}')
+			block(name='content')
+				#page
+					header(id='bigphoto')
+						#big-photo-wraper: img(src='{{ item.fields.photos[0].fields.file.url }}?w=700&q=85&fm=jpg&fl=progressive&bg=rgb:f2e7c9', alt='')
+						img(src='/img/left-button.png' class='gal-btn' id='left-btn')
+						img(src='/img/right-button.png' class='gal-btn' id='right-btn')
+
+					aside(id='description')
+						p(md) {{ item.fields.shortDescriptionIt }}
+
+					aside(id='lines-to-buy')
+						h2 {{ item.fields.name }}
+						p(id='subheadline') {{ item.fields.subname }}
+						h3 {{ item.fields.dominantIt }}
+
+						span(id='price') € {{ item.fields.price }}
+						.btn-w-subline
+							button(id='cta-buy-now' class='snipcart-add-item')(
+								data-item-id="1"
+								data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
+								data-item-price="{{ item.fields.price }}"
+								data-item-weight=""
+								data-item-url="/it/products/{{ item.fields.productUrl }}.html"
+								data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCtaIt }}
+							p(id='cta-subline') {{ item.fields.buttonSublineIt }}
+
+						table
+							tr
+								td.pyramid-level Note di testa:
+								td.pyramid-notes {{ item.fields.topNotesIt }}
+							tr
+								td.pyramid-level Note di cuore:
+								td.pyramid-notes {{ item.fields.heartNotesIt }}
+							tr
+								td.pyramid-level Note di fondo:
+								td.pyramid-notes {{ item.fields.baseNotesIt }}
+
+					#productBottomHalf
+						#thumbs
+							each(loop='photo of item.fields.photos')
+								img(src='{{ photo.fields.file.url }}?w=200&h=200&&q=100&fm=jpg&fl=progressive&fit=thumb&bg=rgb:fcfaf5', alt="")
+
+
+						article#on-product
+							#read-more-cta
+								a
+									button Leggi di più
+									i.fa.fa-angle-down
+							#white-gradient-when-collapsed
+							#product-longread.lr-collapsed(md) {{ item.fields.longDescriptionIt }}
+
+					#productFooter
+						include(src='includes/_footer.sgr')

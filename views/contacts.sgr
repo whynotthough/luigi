@@ -1,0 +1,20 @@
+extends(src='layout.sgr')
+	block(name='nav')
+		include(src='includes/_nav.sgr')
+	block(name='content')
+		header(id='map')
+
+
+		#contact-details
+			div
+				h2 {{ contentful.contactPage[0].fields.officeHeadline }}
+				h3 {{ contentful.contactPage[0].fields.officeCTA }}
+				p {{ contentful.contactPage[0].fields.officeAddress }}
+			div
+				h2 {{ contentful.contactPage[0].fields.emailHeadline }}
+				h3 {{ contentful.contactPage[0].fields.emailCTA }}
+				a(href="mailto:{{ contentful.contactPage[0].fields.emailAddress }}") {{ contentful.contactPage[0].fields.emailAddress }}
+
+		include(src='includes/_footer.sgr')
+
+  include(src='includes/_googlemaps.sgr')

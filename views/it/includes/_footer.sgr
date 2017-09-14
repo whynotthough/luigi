@@ -1,0 +1,18 @@
+footer
+	form#email-form.half-footer-item(action='javascript:tempSuccess();')
+		p Altri prodotti di bellezza viveranno presto. Non si può perdere...
+		input(type="email", placeholder="IL SUO MAIL")
+		button.clear-cta Sottoscrivi
+
+	.half-footer-item
+		ul
+			each(loop='page in contentful.textPages')
+				// li {{ console.log(page.fields.pdf) }}
+				if(condition="!page.fields.pdf")
+					li: a(href="/it/{{ page.fields.footerUrl }}") {{ page.fields.headlineIt }}
+				else
+					li: a(href="{{ page.fields.pdf.fields.file.url }}" target='_blank') {{ page.fields.headlineIt }}
+
+			li: a(href="/it/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadlineIt }}
+
+		img(src='/img/small-credit-cards-accepted.png')
