@@ -344,9 +344,9 @@ ava-init@^0.2.0:
     read-pkg-up "^2.0.0"
     write-pkg "^3.1.0"
 
-ava@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/ava/-/ava-0.21.0.tgz#cd8d8ea3546f57150dea38548b9f72f8ca583d29"
+ava@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/ava/-/ava-0.22.0.tgz#4c28a1fdef7e749ba0c8131ac18a7ca489eef049"
   dependencies:
     "@ava/babel-preset-stage-4" "^1.1.0"
     "@ava/babel-preset-transform-test-files" "^3.0.0"
@@ -3879,9 +3879,9 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-markdown-it@^8.2.2:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.3.1.tgz#2f4b622948ccdc193d66f3ca2d43125ac4ac7323"
+markdown-it@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
   dependencies:
     argparse "^1.0.7"
     entities "~1.1.1"
@@ -5593,9 +5593,9 @@ reshape-content@^0.2.0:
     reshape-plugin-util "^0.2.1"
     when "^3.7.7"
 
-reshape-eval-code@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/reshape-eval-code/-/reshape-eval-code-0.3.3.tgz#a366ff29f893a16beb94c48722c028ac54af29a8"
+reshape-eval-code@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/reshape-eval-code/-/reshape-eval-code-0.3.4.tgz#159335800fca1642ce4b6bebdba2053fbdfa0f24"
   dependencies:
     reshape-code-gen "^0.2.1"
     reshape-parser "^0.2.1"
@@ -5654,20 +5654,20 @@ reshape-retext@^1.0.1:
     retext "^5.0.0"
     when "^3.7.8"
 
-reshape-standard@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/reshape-standard/-/reshape-standard-3.1.0.tgz#dc5131422a7b756a01308af580de1859013b6ffc"
+reshape-standard@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/reshape-standard/-/reshape-standard-3.1.1.tgz#e9d1937f47c2fc6000f5f8d85bfa2be537f071c0"
   dependencies:
-    markdown-it "^8.2.2"
+    markdown-it "^8.4.0"
     reshape-beautify "^0.1.2"
     reshape-content "^0.2.0"
-    reshape-eval-code "^0.3.3"
+    reshape-eval-code "^0.3.4"
     reshape-expressions "^0.1.5"
     reshape-include "^1.0.0"
     reshape-layouts "^1.0.0"
     reshape-minify "^1.1.0"
     reshape-retext "^1.0.1"
-    retext-smartypants "^3.0.0"
+    retext-smartypants "^3.0.1"
 
 reshape@^0.4.1:
   version "0.4.1"
@@ -5732,9 +5732,9 @@ retext-latin@^2.0.0:
     parse-latin "^4.0.0"
     unherit "^1.0.4"
 
-retext-smartypants@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-3.0.0.tgz#0ce916c4e2b1c32a4607fe8f691f852d793ad84e"
+retext-smartypants@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-3.0.1.tgz#53d718fde7178a9bc09f120159b0d76cc537fb6c"
   dependencies:
     nlcst-to-string "^2.0.0"
     unist-util-visit "^1.0.0"
@@ -5776,6 +5776,12 @@ rimraf-promise@^2.0.0:
 rimraf@2, rimraf@^2.2.8, rimraf@^2.4.3, rimraf@^2.5.1, rimraf@^2.5.2, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
+  dependencies:
+    glob "^7.0.5"
+
+rimraf@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:
     glob "^7.0.5"
 
@@ -6003,9 +6009,9 @@ slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
 
-slugify@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.1.0.tgz#7e5b0938d52b5efab1878247ef0f6a4f05db7ee0"
+slugify@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.2.1.tgz#2118f4b0fbcfd79d7b2c451c22b724e5c1991330"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
@@ -6154,9 +6160,9 @@ spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
-spike-contentful@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/spike-contentful/-/spike-contentful-2.0.0.tgz#ad075aed10816e0cd3d7ddd065d520409374c0a7"
+spike-contentful@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/spike-contentful/-/spike-contentful-2.0.1.tgz#b4c2f75a51f401ad95e17f0a1f4c5efb8f29a3e2"
   dependencies:
     contentful "^4.5.0"
     es6bindall "^0.0.9"

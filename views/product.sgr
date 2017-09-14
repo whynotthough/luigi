@@ -26,8 +26,8 @@ extends(src='layout.sgr')
                 data-item-price="{{ item.fields.price }}"
                 data-item-weight=""
                 data-item-url="/products/{{ item.fields.productUrl }}.html"
-                //- data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCta }}
                 data-item-description="{{ item.fields.subname }}") Coming soon
+                //- data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCta }}
               p(id='cta-subline') {{ item.fields.buttonSubline }}
 
             table
