@@ -20,14 +20,15 @@ extends(src='../layout.sgr')
 
 						span(id='price') € {{ item.fields.price }}
 						.btn-w-subline
-							button(id='cta-buy-now' class='snipcart-add-item')(
+							button(id='cta-buy-now' class='snipcart-add-item temp-inactive')(
 								data-item-id="1"
 								data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
 								data-item-price="{{ item.fields.price }}"
 								data-item-weight=""
 								data-item-url="/it/products/{{ item.fields.productUrl }}.html"
 								data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCtaIt }}
-							p(id='cta-subline') {{ item.fields.buttonSublineIt }}
+              //- p(id='cta-subline') {{ item.fields.buttonSublineIt }}
+							p(id='cta-subline') Coming soon
 
 						table
 							tr
