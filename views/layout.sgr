@@ -18,7 +18,7 @@ html
       if (window.location.pathname.indexOf('/it/') >= 0){
         document.querySelector('html').setAttribute('lang', 'it')
       }
-            
+
     script(src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
       id='snipcart'
       data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')
