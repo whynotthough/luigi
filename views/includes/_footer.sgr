@@ -1,8 +1,8 @@
 footer
-	form#email-form.half-footer-item(action='javascript:tempSuccess();')
+	form#email-form.half-footer-item(action='' data-netlify="true")
 		p Be the first to receive news and new product information.
 		input(type="email", placeholder="ENTER YOUR EMAIL")
-		button.clear-cta Subscribe
+		button(class='clear-cta', type='submit') Subscribe
 
 	.half-footer-item
 		ul
