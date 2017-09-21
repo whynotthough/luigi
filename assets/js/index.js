@@ -130,11 +130,11 @@ if (window.location.pathname.indexOf('products') >= 0){
 }
 
 
-$("#email-form").submit(function(e) {
-  e.preventDefault();
+// $("#email-form").submit(function(e) {
+//   e.preventDefault();
 
-  var $form = $(this);
-  $.post($form.attr("action"), $form.serialize()).then(function() {
-    alert("Thank you!");
-  });
-});
+//   var $form = $(this);
+//   $.post($form.attr("action"), $form.serialize()).then(function() {
+//     alert("Thank you!");
+//   });
+// });
