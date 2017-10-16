@@ -1,8 +1,17 @@
-// console.log('you can use ES6 here : )')
+// $("#email-form").submit(function(e) {
+//   e.preventDefault();
+
+//   var $form = $(this);
+//   $.post($form.attr("action"), $form.serialize()).then(function() {
+//     alert("Thank you!");
+//   });
+// });
+
 
 // if (window.location.pathname === '/') {
 //  location.assign(newPath)
 // }
+
 
 // HIDE/SHOW MOB NAV BAR VIA SCROLL
 var didScroll;
@@ -128,3 +137,68 @@ if (window.location.pathname.indexOf('products') >= 0){
   })
 
 }
+
+
+// APPEND ~ AS A SUPERSCRIPT TO ALL N LETTERS IN 'VICUNA'
+const word = 'vicuna',
+      nRelPos = 4, // relative position of 'n' in 'vicuna'
+      prepndStr = '<span class="superscripted-n">',
+      appendStr = '</span>'
+
+var bodyNodes = document.body.getElementsByTagName("*")
+
+for (var i = bodyNodes.length; i--;) {
+  // grab all bottom level nodes wich have 'vicuna'
+  if ( (bodyNodes[i].textContent.toLowerCase().indexOf('vicuna') >=0) && bodyNodes[i].childElementCount === 0 ) {
+
+    // parse in lower case mode
+    const array = bodyNodes[i].textContent.toLowerCase()
+
+    var indicesForN = [], // array for all letter 'n' absolute positions in a node
+        vicunaIdx = array.indexOf(word),
+        nLetterHolder,
+        injection,
+        nodeNewHTML = '',
+        nAbsPosIndexer = -1 // indexer for an array of 'n' absolute positions
+
+    // make a loop while we keep meeting 'vicuna' in a node
+    while (vicunaIdx != -1) {
+
+      // push 'n' absolute position to an array
+      indicesForN.push(vicunaIdx + nRelPos)
+
+      // update indexer of indicesForN array to use it below (0, 1, 2, etc.)
+      nAbsPosIndexer++
+
+      // hold original 'n' for later injection (case sensative)
+      nLetterHolder = bodyNodes[i].textContent[ vicunaIdx + nRelPos ]
+
+      injection = prepndStr + nLetterHolder + appendStr
+
+      if (indicesForN.length === 1) {
+        // if first inclusion, get the beginning of the node
+        nodeNewHTML = bodyNodes[i].textContent.slice( 0, vicunaIdx + nRelPos ) +
+                      injection
+      } else {
+        // get a part between previuse and current 'n' positions
+        nodeNewHTML = nodeNewHTML +
+                      bodyNodes[i].textContent.slice( indicesForN[ nAbsPosIndexer - 1 ] + 1, indicesForN[ nAbsPosIndexer ] ) +
+                      injection
+      }
+
+      // find the next inclusion of word
+      vicunaIdx = array.indexOf(word, vicunaIdx + word.length)
+
+      if (vicunaIdx === -1) {
+        // get a tail of a node if no more inclusions
+        nodeNewHTML = nodeNewHTML +
+                      bodyNodes[i].textContent.slice( indicesForN[ indicesForN.length-1 ] + 1, bodyNodes[i].textContent.length )
+      }
+
+    }
+
+    bodyNodes[i].innerHTML = nodeNewHTML
+
+  }
+}
+
