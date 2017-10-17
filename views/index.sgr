@@ -27,7 +27,7 @@ extends(src='layout.sgr')
 
     include(src='includes/_footer.sgr')
 
-    form(name="contact" action="thank-you" netlify)
+    form(name="test-contact" action="thank-you" netlify)
       p
        label Your Name:
          input(type="text" name="name")
