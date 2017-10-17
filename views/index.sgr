@@ -26,16 +26,3 @@ extends(src='layout.sgr')
                 button.clear-cta Product Details
 
     include(src='includes/_footer.sgr')
-
-    form(name="test-contact" action="thank-you" netlify)
-      p
-       label Your Name:
-         input(type="text" name="name")
-      p
-       label Your Email:
-         input(type="email" name="email")
-      p
-       label Message:
-         textarea(name="message")
-      p
-       button(type="submit") Send
