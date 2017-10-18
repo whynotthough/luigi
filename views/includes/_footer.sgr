@@ -1,6 +1,6 @@
 footer
     //- autocomplete='on'
-	form(id="email-form", class="half-footer-item", name="email-form", action="thank-you", netlify)
+	form(class="half-footer-item", name="email-form", action="thank-you", netlify)
 		p Be the first to receive news and new product information.
 		input(type="email" name="email" placeholder="ENTER YOUR EMAIL")
 		button(class='clear-cta' type='submit') Subscribe
