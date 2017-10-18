@@ -1,6 +1,6 @@
 footer
     //- autocomplete='on'
-	form(id='email-form', class='half-footer-item', name='email-form', action='thank-you', data-netlify="true")
+	form(name="test-contact" action="thank-you" netlify)
 		p Be the first to receive news and new product information.
 		input(type="email" name="email" placeholder="ENTER YOUR EMAIL")
 		button(class='clear-cta' type='submit') Subscribe
@@ -20,15 +20,15 @@ footer
 		img(src='/img/small-credit-cards-accepted.png')
 
 
-  form(name="test-contact" action="thank-you" netlify)
-    p
-     label Your Name:
-       input(type="text" name="name")
-    p
-     label Your Email:
-       input(type="email" name="email")
-    p
-     label Message:
-       textarea(name="message")
-    p
-     button(type="submit") Send
+      //- form(name="test-contact" action="thank-you" netlify)
+        p
+         label Your Name:
+           input(type="text" name="name")
+        p
+         label Your Email:
+           input(type="email" name="email")
+        p
+         label Message:
+           textarea(name="message")
+        p
+         button(type="submit") Send
