@@ -1,7 +1,7 @@
 footer
-	form#email-form.half-footer-item(action='thank-you' netlify)
+	form(id='email-form', class='half-footer-item', action='thank-you' netlify)
 		p Be the first to receive news and new product information.
-		input(type="email", placeholder="ENTER YOUR EMAIL")
+		input(type="email", name="email", placeholder="ENTER YOUR EMAIL")
 		button(class='clear-cta', type='submit') Subscribe
 
 	.half-footer-item
