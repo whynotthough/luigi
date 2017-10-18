@@ -18,3 +18,17 @@ footer
 			li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadline }}
 
 		img(src='/img/small-credit-cards-accepted.png')
+
+
+  form(name="test-contact" action="thank-you" netlify)
+    p
+     label Your Name:
+       input(type="text" name="name")
+    p
+     label Your Email:
+       input(type="email" name="email")
+    p
+     label Message:
+       textarea(name="message")
+    p
+     button(type="submit") Send
