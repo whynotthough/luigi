@@ -1,10 +1,17 @@
 footer
     //- autocomplete='on'
 	form(id="email-form" class="half-footer-item" netlify-honeypot="bot-field" action="#" netlify)
-		p Be the first to receive news and new product information.
-    input(id='email' name="email" type="email" placeholder="ENTER YOUR EMAIL")
+		p(class='state-ready') Be the first to receive news and new product information.
+    input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL")
+    button(class='clear-cta state-ready' type='submit') Subscribe
+    p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
+
+    //- subscriber's language, hidden and automatically detected
+    input(id='lang' name="lang" class='hidden' value='en')
+
+    //- bot defence
 		input(class="hidden" name="bot-field")
-		button(class='clear-cta' type='submit') Subscribe
+
 
 
 	.half-footer-item
