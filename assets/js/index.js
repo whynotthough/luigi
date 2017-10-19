@@ -1,11 +1,17 @@
-// $("#email-form").submit(function(e) {
-//   e.preventDefault();
+var emailForm = document.querySelector('#email-form'),
+    emailFormInput = document.querySelector('#email')
 
-//   var $form = $(this);
-//   $.post($form.attr("action"), $form.serialize()).then(function() {
-//     alert("Thank you!");
-//   });
-// });
+emailForm.addEventListener('submit', function (e) {
+
+  //prevent the normal submission of the form
+  e.preventDefault()
+
+  console.log('form is submitted with data: ' + emailFormInput.value)
+
+})
+
+
+// object.onsubmit = function () {}
 
 
 // if (window.location.pathname === '/') {
