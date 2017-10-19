@@ -17,7 +17,7 @@ function updateFormState (timing) {
 
   timing = timing || 0
 
-  var input = document.querySelector('#email-form > input'),
+  var input = document.querySelector('#email-form > #email'),
       stateReady = document.querySelectorAll('.state-ready'),
       stateDoneNotif = document.querySelector('.state-done-notif'),
       notifHtml = '<span>' + input.value + '</span>' + stateDoneNotif.dataset.line + '<br>' +
