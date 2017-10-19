@@ -1,14 +1,24 @@
-var emailForm = document.querySelector('#email-form'),
-    emailFormInput = document.querySelector('#email')
+// var emailForm = document.querySelector('#email-form'),
+//     emailFormInput = document.querySelector('#email')
 
-emailForm.addEventListener('submit', function (e) {
+// emailForm.addEventListener('submit', function (e) {
 
-  //prevent the normal submission of the form
-  e.preventDefault()
+//   //prevent the normal submission of the form
+//   e.preventDefault()
 
-  console.log('form is submitted with data: ' + emailFormInput.value)
+//   console.log('form is submitted with data: ' + emailFormInput.value)
 
-})
+// })
+
+
+$("#email-form").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    alert("Thank you!");
+  });
+});
 
 
 // object.onsubmit = function () {}
