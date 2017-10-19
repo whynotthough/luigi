@@ -1,8 +1,18 @@
 footer
-	form#email-form.half-footer-item(action='javascript:tempSuccess();')
-		p Be the first to receive news and new product information.
-		input(type="email", placeholder="ENTER YOUR EMAIL")
-		button.clear-cta Subscribe
+	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
+    //- subscriber's language, hidden and automatically detected
+    input(id='lang' name="lang" class='hidden' value='en')
+
+    p(class='state-ready') Be the first to receive news and new product information.
+    input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL")
+    button(class='clear-cta state-ready' type='submit') Subscribe
+    p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
+
+
+    //- bot defence
+		input(class="hidden" name="bot-field")
+
+
 
 	.half-footer-item
 		ul
@@ -16,6 +26,3 @@ footer
 			li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadline }}
 
 		img(src='/img/small-credit-cards-accepted.png')
-
-include(src='includes/_ganalytics.sgr')
-include(src='includes/_yametrika.sgr')

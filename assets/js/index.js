@@ -1,11 +1,42 @@
-// $("#email-form").submit(function(e) {
-//   e.preventDefault();
 
-//   var $form = $(this);
-//   $.post($form.attr("action"), $form.serialize()).then(function() {
-//     alert("Thank you!");
-//   });
-// });
+// ------------- NETLIFY + AJAX HANDLER FOR EMAIL SUBSCRIPTION FORM -------
+$("#email-form").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this)
+
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    // alert("Thank you!");
+    updateFormState()
+    updateFormState(4000)
+  });
+});
+
+// my function
+function updateFormState (timing) {
+
+  timing = timing || 0
+
+  var input = document.querySelector('#email-form > #email'),
+      stateReady = document.querySelectorAll('.state-ready'),
+      stateDoneNotif = document.querySelector('.state-done-notif'),
+      notifHtml = '<span>' + input.value + '</span>' + stateDoneNotif.dataset.line + '<br>' +
+                  stateDoneNotif.dataset.cheers,
+
+  resetForm = setTimeout(() => {
+    if (timing) {
+      // if timing is passed then reset the form after timing
+      stateDoneNotif.textContent = input.value = ''
+    } else {
+      // if no timing is passed then show ajax notif immediately
+      stateDoneNotif.innerHTML = notifHtml
+    }
+    stateReady.forEach( function (e) {
+                e.classList.toggle('off') })
+    stateDoneNotif.classList.toggle('off')
+  }, timing)
+}
+
 
 
 // if (window.location.pathname === '/') {

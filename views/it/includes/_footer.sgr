@@ -1,8 +1,15 @@
 footer
-	form#email-form.half-footer-item(action='javascript:tempSuccess();')
-		p Altri prodotti di bellezza viveranno presto. Non si può perdere...
-		input(type="email", placeholder="IL SUO MAIL")
-		button.clear-cta Sottoscrivi
+	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
+    //- subscriber's language, hidden and automatically detected
+    input(id='lang' name="lang" class='hidden' value='it')
+
+    p(class='state-ready') Altri prodotti di bellezza viveranno presto. Non si può perdere...
+    input(id='email' class='state-ready' name="email" type="email" placeholder="IL SUO MAIL")
+    button(class='clear-cta state-ready' type='submit') Sottoscrivi
+    p(class='state-done-notif off' data-line=' viene salvato.' data-cheers='Grazie!')
+
+    //- bot defence
+    input(class="hidden" name="bot-field")
 
 	.half-footer-item
 		ul
@@ -16,6 +23,3 @@ footer
 			li: a(href="/it/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadlineIt }}
 
 		img(src='/img/small-credit-cards-accepted.png')
-
-include(src='../includes/_ganalytics.sgr')
-include(src='../includes/_yametrika.sgr')
