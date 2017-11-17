@@ -4,7 +4,7 @@ footer
     input(id='lang' name="lang" class='hidden' value='it')
 
     p(class='state-ready') Altri prodotti di bellezza viveranno presto. Non si può perdere...
-    input(id='email' class='state-ready' name="email" type="email" placeholder="IL SUO MAIL")
+    input(id='email' class='state-ready' name="email" type="email" placeholder="IL SUO MAIL"  required)
     button(class='clear-cta state-ready' type='submit') Sottoscrivi
     p(class='state-done-notif off' data-line=' viene salvato.' data-cheers='Grazie!')
 

@@ -4,9 +4,12 @@ $("#email-form").submit(function(e) {
   e.preventDefault();
 
   updateFormState()
+  ga('send', 'event', 'email-subscription', 'hit-subscribe')
+
   var $form = $(this)
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
+    ga('send', 'event', 'email-subscription', 'promise-resolved')
     // alert("Thank you!");
     // updateFormState(8000)
   });

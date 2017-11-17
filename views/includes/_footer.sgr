@@ -4,7 +4,7 @@ footer
     input(id='lang' name="lang" class='hidden' value='en')
 
     p(class='state-ready') Be the first to receive news and new product information.
-    input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL")
+    input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
     button(class='clear-cta state-ready' type='submit') Subscribe
     p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
 
