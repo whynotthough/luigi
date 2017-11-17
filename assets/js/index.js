@@ -22,17 +22,10 @@ $("#email-form").submit(function(e) {
       'event_label': timing
     })
 
-    // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-    // detailed version
-    // gtag('event', 'event_name', {
-    //   'event_category': categoryName,
-    //   'event_label': labelName
-    // })
-
-
     // updateFormState(8000)
 
   })
+
 })
 
 // my function
