@@ -3,12 +3,12 @@
 $("#email-form").submit(function(e) {
   e.preventDefault();
 
+  updateFormState()
   var $form = $(this)
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
     // alert("Thank you!");
-    updateFormState()
-    updateFormState(4000)
+    updateFormState(8000)
   });
 });
 
