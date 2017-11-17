@@ -23,3 +23,7 @@ footer
 			li: a(href="/it/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadlineIt }}
 
 		img(src='/img/small-credit-cards-accepted.png')
+
+
+  include(src='../includes/_ganalytics.sgr')
+  include(src='../includes/_yametrika.sgr')
