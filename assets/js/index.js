@@ -1,4 +1,59 @@
 
+// ------------- NETLIFY + AJAX HANDLER FOR EMAIL SUBSCRIPTION FORM -------
+$("#email-form").submit(function(e) {
+  e.preventDefault();
+
+  updateFormState()
+
+  gtag('event', 'hit-submit-button', {
+    'event_category': 'email-subscription'
+  })
+
+
+  let $form = $(this),
+      start = performance.now()
+
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+
+    let timing = Math.floor(performance.now() - start) + 'ms'
+
+    gtag('event', 'promise-resolved', {
+      'event_category': 'email-subscription',
+      'event_label': timing
+    })
+
+    // updateFormState(8000)
+
+  })
+
+})
+
+// my function
+function updateFormState (timing = 0) {
+
+  var input = document.querySelector('#email-form > #email'),
+      stateReady = document.querySelectorAll('.state-ready'),
+      stateDoneNotif = document.querySelector('.state-done-notif'),
+      notifHtml = '<span>' + input.value + '</span>' + stateDoneNotif.dataset.line + '<br>' +
+                  stateDoneNotif.dataset.cheers,
+
+  resetForm = setTimeout(() => {
+    if (timing) {
+      // if timing is passed then reset the form after timing
+      stateDoneNotif.textContent = input.value = ''
+    } else {
+      // if no timing is passed then show ajax notif immediately
+      stateDoneNotif.innerHTML = notifHtml
+    }
+    stateReady.forEach( function (e) {
+                e.classList.toggle('off') })
+    stateDoneNotif.classList.toggle('off')
+  }, timing)
+}
+
+
+
+
 
 
 
@@ -196,4 +251,3 @@ for (var i = bodyNodes.length; i--;) {
 
   }
 }
-
