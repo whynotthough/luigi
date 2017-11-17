@@ -1,5 +1,5 @@
 footer
-	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field")
+	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" data-netlify='{{ env === "production" }}' )
     //- subscriber's language, hidden and automatically detected
     input(id='lang' name="lang" class='hidden' value='en')
 
@@ -8,10 +8,8 @@ footer
     button(class='clear-cta state-ready' type='submit') Subscribe
     p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
 
-
     //- bot defence
 		input(class="hidden" name="bot-field")
-
 
 
 	.half-footer-item
@@ -26,7 +24,3 @@ footer
 			li: a(href="/{{ contentful.contactPage[0].fields.footerUrl }}") {{ contentful.contactPage[0].fields.pageHeadline }}
 
 		img(src='/img/small-credit-cards-accepted.png')
-
-
-  include(src='includes/_ganalytics.sgr')
-  include(src='includes/_yametrika.sgr')
