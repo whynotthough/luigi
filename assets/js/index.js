@@ -5,26 +5,19 @@ $("#email-form").submit(function(e) {
 
   updateFormState()
 
-  // gtag('event', 'hit-submit-button', {
-  //   'event_category': 'email-subscription'
-  // })
+  gtag('event', 'hit-submit-button', {
+    'event_category': 'email-subscription'
+  })
 
-  // let $form = $(this),
-  //     start = performance.now()
+  let $form = $(this),
+      start = performance.now()
 
-  // $.post($form.attr("action"), $form.serialize()).then(function() {
-  //   let timing = Math.floor(performance.now() - start) + 'ms'
-  //   gtag('event', 'promise-resolved', {
-  //     'event_category': 'email-subscription',
-  //     'event_label': timing
-  //   })
-
-    // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-    // detailed version
-    // gtag('event', 'event_name', {
-    //   'event_category': categoryName,
-    //   'event_label': labelName
-    // })
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    let timing = Math.floor(performance.now() - start) + 'ms'
+    gtag('event', 'promise-resolved', {
+      'event_category': 'email-subscription',
+      'event_label': timing
+    })
 
     // updateFormState(8000)
 
