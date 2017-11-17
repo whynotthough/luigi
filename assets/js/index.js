@@ -4,16 +4,36 @@ $("#email-form").submit(function(e) {
   e.preventDefault();
 
   updateFormState()
-  ga('send', 'event', 'email-subscription', 'hit-subscribe')
 
-  var $form = $(this)
+  gtag('event', 'hit-submit-button', {
+    'event_category': 'email-subscription'
+  })
+
+
+  let $form = $(this),
+      start = performance.now()
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
-    ga('send', 'event', 'email-subscription', 'promise-resolved')
-    // alert("Thank you!");
+
+    let timing = Math.floor(performance.now() - start) + 'ms'
+
+    gtag('event', 'promise-resolved', {
+      'event_category': 'email-subscription',
+      'event_label': timing
+    })
+
+    // https://developers.google.com/analytics/devguides/collection/gtagjs/events
+    // detailed version
+    // gtag('event', 'event_name', {
+    //   'event_category': categoryName,
+    //   'event_label': labelName
+    // })
+
+
     // updateFormState(8000)
-  });
-});
+
+  })
+})
 
 // my function
 function updateFormState (timing = 0) {
@@ -37,6 +57,11 @@ function updateFormState (timing = 0) {
     stateDoneNotif.classList.toggle('off')
   }, timing)
 }
+
+
+
+
+
 
 
 
