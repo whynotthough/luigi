@@ -8,14 +8,12 @@ $("#email-form").submit(function(e) {
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
     // alert("Thank you!");
-    updateFormState(8000)
+    // updateFormState(8000)
   });
 });
 
 // my function
-function updateFormState (timing) {
-
-  timing = timing || 0
+function updateFormState (timing = 0) {
 
   var input = document.querySelector('#email-form > #email'),
       stateReady = document.querySelectorAll('.state-ready'),
