@@ -3,19 +3,20 @@
 $("#email-form").submit(function(e) {
   e.preventDefault();
 
+  updateFormState()
+  ga('send', 'event', 'email-subscription', 'hit-subscribe')
+
   var $form = $(this)
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
+    ga('send', 'event', 'email-subscription', 'promise-resolved')
     // alert("Thank you!");
-    updateFormState()
-    updateFormState(4000)
+    // updateFormState(8000)
   });
 });
 
 // my function
-function updateFormState (timing) {
-
-  timing = timing || 0
+function updateFormState (timing = 0) {
 
   var input = document.querySelector('#email-form > #email'),
       stateReady = document.querySelectorAll('.state-ready'),
