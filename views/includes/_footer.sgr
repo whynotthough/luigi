@@ -1,7 +1,7 @@
 footer
   if(condition='env === "production"')
-    form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
-        //- form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field")
+        //- form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
+  	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field")
       //- subscriber's language, hidden and automatically detected
       input(id='lang' name="lang" class='hidden' value='en')
       p(class='state-ready') Be the first to receive news and new product information.
