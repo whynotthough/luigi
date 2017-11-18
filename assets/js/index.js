@@ -1,6 +1,5 @@
-
 // ------------- NETLIFY + AJAX HANDLER FOR EMAIL SUBSCRIPTION FORM -------
-$("#email-form").submit(function(e) {
+$("#email-form").submit( (e) => {
   e.preventDefault();
 
   updateFormState()
@@ -11,7 +10,7 @@ $("#email-form").submit(function(e) {
 
 
   let $form = $(this),
-      start = performance.now()
+    start = performance.now()
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
 
@@ -27,6 +26,7 @@ $("#email-form").submit(function(e) {
   })
 
 })
+
 
 // my function
 function updateFormState (timing = 0) {
