@@ -1,16 +1,24 @@
 footer
-	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" data-netlify='{{ env === "production" }}' )
-    //- subscriber's language, hidden and automatically detected
-    input(id='lang' name="lang" class='hidden' value='en')
-
-    p(class='state-ready') Be the first to receive news and new product information.
-    input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
-    button(class='clear-cta state-ready' type='submit') Subscribe
-    p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
-
-    //- bot defence
-		input(class="hidden" name="bot-field")
-
+  if(condition='env === "production"')
+  	form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
+      //- subscriber's language, hidden and automatically detected
+      input(id='lang' name="lang" class='hidden' value='en')
+      p(class='state-ready') Be the first to receive news and new product information.
+      input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
+      button(class='clear-cta state-ready' type='submit') Subscribe
+      p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
+      //- bot defence
+  		input(class="hidden" name="bot-field")
+  else
+    form(action="#" id="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field")
+      //- subscriber's language, hidden and automatically detected
+      input(id='lang' name="lang" class='hidden' value='en')
+      p(class='state-ready') Be the first to receive news and new product information.
+      input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
+      button(class='clear-cta state-ready' type='submit') Subscribe
+      p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
+      //- bot defence
+      input(class="hidden" name="bot-field")
 
 	.half-footer-item
 		ul
