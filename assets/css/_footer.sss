@@ -51,7 +51,6 @@ footer img
   position: relative
   order: 1
   text-align: center
-  /*background: rgba(198,197,197,0.4)*/
   background: #E8E8E8
   padding-bottom: 50px
 
@@ -99,6 +98,10 @@ footer img
   & .state-ready, & .state-done-notif
     transition: opacity 550ms
 
+
+  & .btn-disabled
+    opacity: 0.3
+    pointer-events: none
 
 ::-webkit-input-placeholder /* Chrome/Opera/Safari */
   color: rgba(198,197,197,0.6)

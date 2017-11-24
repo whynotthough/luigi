@@ -1,16 +1,53 @@
+const emailForm = document.querySelector('#email-form')
+const emailInput = document.querySelector('#email-form > #email')
+const emailBtn = document.querySelector('#email-form > button')
+
+emailInput.oninput = () => emailBtn.classList.remove('btn-disabled')
+
+
+// emailBtn.addEventListener( 'click', () => {
+
+//   // if (!emailInput.validity.valid) { console.log('not valid'); return }
+//   if (!emailInput.checkValidity()) { console.log('not valid'); return }
+
+//   emailForm.submit( (e) => {
+
+//     console.log( new FormData( emailForm ) )
+
+//     e.preventDefault()
+//   } )
+// }, false )
+
+
+// fetch ( emailForm.getAttribute ('action'), {
+//   method: 'post',
+//   body: new FormData( emailForm )
+// }).then( ( resp ) => {
+
+//   console.log(resp)
+
+// }).catch( ( err ) => {
+//   // Error :(
+// })
+
+
+
 // ------------- NETLIFY + AJAX HANDLER FOR EMAIL SUBSCRIPTION FORM -------
 $("#email-form").submit( (e) => {
   e.preventDefault();
 
-  updateFormState()
+  // updateFormState()
 
   gtag('event', 'hit-submit-button', {
     'event_category': 'email-subscription'
   })
 
 
-  let $form = $(this),
-    start = performance.now()
+  let $form = $(this)
+  let start = performance.now()
+
+  // console.log($form.attr("action"), $form.serialize())
+  // console.log(e)
 
   $.post($form.attr("action"), $form.serialize()).then(function() {
 
@@ -24,7 +61,6 @@ $("#email-form").submit( (e) => {
     // updateFormState(8000)
 
   })
-
 })
 
 
