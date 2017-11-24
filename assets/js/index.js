@@ -36,7 +36,7 @@ emailInput.oninput = () => emailBtn.classList.remove('btn-disabled')
 $("#email-form").submit( (e) => {
   e.preventDefault();
 
-  // updateFormState()
+  updateFormState()
 
   gtag('event', 'hit-submit-button', {
     'event_category': 'email-subscription'
