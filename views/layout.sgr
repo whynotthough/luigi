@@ -41,13 +41,13 @@ html
           var emailForm = document.querySelector('#email-form')
           var emailInput = document.querySelector('#email-form > #email')
           var stateReady = document.querySelectorAll('.state-ready')
+          var emailBtn = document.querySelector('#email-form > button')
 
           function onloadCallback () {
             stateReady.forEach( function (e) { e.classList.toggle('off') })
           }
 
           emailInput.oninput = function() {
-            var emailBtn = document.querySelector('#email-form > button')
             emailBtn.classList.remove('btn-disabled')
           }
 
