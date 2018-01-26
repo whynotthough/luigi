@@ -4,11 +4,11 @@ footer
   	form(action="#" id="email-form" name="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
       //- subscriber's language, hidden and automatically detected
       input(name="lang" type='hidden' value='en')
-      p(class='state-ready') Be the first to receive news and new product information.
-      input(id='email' class='state-ready' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
-      div(id='recaptcha' class="g-recaptcha" data-sitekey="6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS" data-callback="humanSave" data-size="invisible")
-      button(class='clear-cta state-ready btn-disabled' type='button') Subscribe
+      p(class='state-ready off') Be the first to receive news and new product information.
+      input(id='email' class='state-ready off' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
+      button(class='clear-cta state-ready off btn-disabled' type='button') Subscribe
       p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
+      #recaptcha
       //- bot defence
   		input(type="hidden" name="bot-field")
   else
