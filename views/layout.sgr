@@ -43,34 +43,19 @@ html
           var stateReady = document.querySelectorAll('.state-ready')
           var emailBtn = document.querySelector('#email-form > button')
 
-          function onloadCallback () {
-            stateReady.forEach( function (e) { e.classList.toggle('off') })
-          }
-
           emailInput.oninput = function() {
             emailBtn.classList.remove('btn-disabled')
           }
 
-
-
           emailBtn.addEventListener('click', function(e) {
             e.preventDefault()
             if ( !emailInput.validity.valid ) {
-
               emailForm.reportValidity()
-
             } else {
-
-              grecaptcha.render('recaptcha', {
-                'sitekey' : '6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS',
-                'size' : 'compact',
-                'callback' : humanActivate
-              })
-
+              grecaptcha.execute()
             }
 
           }, false)
-
 
           function humanActivate () {
             updateFormState ()
@@ -114,7 +99,8 @@ html
 
 
 
-        script(src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer)
+          //- script(src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer)
+        script(src='https://www.google.com/recaptcha/api.js' async defer)
 
         //- Global Site Tag (gtag.js) - Google Analytics
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-106475940-2")
