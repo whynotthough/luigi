@@ -37,6 +37,77 @@ html
 
       if(condition=" env === 'production' ")
 
+        script.
+          var emailForm = document.querySelector('#email-form')
+          var emailInput = document.querySelector('#email-form > #email')
+          var stateReady = document.querySelectorAll('.state-ready')
+
+          function onloadCallback () {
+            stateReady.forEach( function (e) { e.classList.toggle('off') })
+          }
+
+          emailInput.oninput = function() {
+            grecaptcha.render('recaptcha', {
+              'sitekey' : '6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS',
+              'size' : 'compact',
+              'callback' : humanActivate
+            })
+          }
+
+          function humanActivate () {
+            var emailBtn = document.querySelector('#email-form > button')
+            emailBtn.classList.remove('btn-disabled')
+
+            emailBtn.addEventListener('click', function(e) {
+              e.preventDefault()
+              if ( !emailInput.validity.valid ) {
+                emailForm.reportValidity()
+                return
+              }
+            }, false)
+
+            updateFormState ()
+
+            gtag('event', 'hit-submit-button', {
+              'event_category': 'email-subscription'
+            })
+
+            var start = performance.now()
+
+            fetch ( emailForm.getAttribute ('action'), {
+              method: 'post',
+              body: new FormData( emailForm )
+            }).then( function( res ) {
+              var timing = Math.floor(performance.now() - start) + 'ms'
+              gtag('event', 'data-saved', {
+                'event_category': 'email-subscription',
+                'event_label': timing
+              })
+            }).catch( function( err) {return err})
+
+          }
+
+          function updateFormState (timing) {
+            timing = 0 || timing
+            var input = document.querySelector('#email-form > #email')
+            var stateDoneNotif = document.querySelector('.state-done-notif')
+            var notifHtml = '<span>' + input.value + '</span>' + stateDoneNotif.dataset.line + '<br>' + stateDoneNotif.dataset.cheers
+
+            var resetForm = setTimeout(function() {
+              if (timing) {
+                stateDoneNotif.textContent = input.value = ''
+              } else {
+                stateDoneNotif.innerHTML = notifHtml
+              }
+              stateReady.forEach( function (e) { e.classList.toggle('off') })
+              stateDoneNotif.classList.toggle('off')
+            }, timing)
+          }
+
+
+
+        script(src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer)
+
         //- Global Site Tag (gtag.js) - Google Analytics
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-106475940-2")
         script.
