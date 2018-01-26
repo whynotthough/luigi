@@ -8,8 +8,7 @@ footer
       input(id='email' class='state-ready off' name="email" type="email" placeholder="ENTER YOUR EMAIL" required)
       button(class='clear-cta state-ready off btn-disabled' type='button') Subscribe
       p(class='state-done-notif off' data-line=' is saved.' data-cheers='Thank you!')
-      //- #recaptcha
-      .g-recaptcha(data-sitekey="6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS" data-callback="humanActivate" data-size="invisible")
+      .g-recaptcha(data-sitekey="6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS" data-callback="humanActivate" data-size="invisible" data-badge='inline')
       //- bot defence
   		input(type="hidden" name="bot-field")
   else
