@@ -47,25 +47,32 @@ html
           }
 
           emailInput.oninput = function() {
-            grecaptcha.render('recaptcha', {
-              'sitekey' : '6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS',
-              'size' : 'compact',
-              'callback' : humanActivate
-            })
-          }
-
-          function humanActivate () {
             var emailBtn = document.querySelector('#email-form > button')
             emailBtn.classList.remove('btn-disabled')
+          }
 
-            emailBtn.addEventListener('click', function(e) {
-              e.preventDefault()
-              if ( !emailInput.validity.valid ) {
-                emailForm.reportValidity()
-                return
-              }
-            }, false)
 
+
+          emailBtn.addEventListener('click', function(e) {
+            e.preventDefault()
+            if ( !emailInput.validity.valid ) {
+
+              emailForm.reportValidity()
+
+            } else {
+
+              grecaptcha.render('recaptcha', {
+                'sitekey' : '6LdaekIUAAAAACWqRuQizkrtH3k6vsOJd-qXQktS',
+                'size' : 'compact',
+                'callback' : humanActivate
+              })
+
+            }
+
+          }, false)
+
+
+          function humanActivate () {
             updateFormState ()
 
             gtag('event', 'hit-submit-button', {
@@ -84,8 +91,9 @@ html
                 'event_label': timing
               })
             }).catch( function( err) {return err})
-
           }
+
+
 
           function updateFormState (timing) {
             timing = 0 || timing
