@@ -5,11 +5,19 @@ const emailBtn = document.querySelector('#email-form > button')
 emailInput.oninput = () => emailBtn.classList.remove('btn-disabled')
 
 emailBtn.addEventListener('click', (e) => {
+  e.preventDefault()
 
   if ( !emailInput.validity.valid ) {
     emailForm.reportValidity()
     return
   }
+
+  grecaptcha.execute()
+
+}, false)
+
+
+function humanSave () {
 
   updateFormState ()
 
@@ -22,8 +30,8 @@ emailBtn.addEventListener('click', (e) => {
   fetch ( emailForm.getAttribute ('action'), {
     method: 'post',
     body: new FormData( emailForm )
-  }).then( ( resp ) => {
-    // console.log(resp)
+  }).then( ( res ) => {
+    // console.log(res)
     const timing = Math.floor(performance.now() - start) + 'ms'
     gtag('event', 'data-saved', {
       'event_category': 'email-subscription',
@@ -33,10 +41,7 @@ emailBtn.addEventListener('click', (e) => {
     // Error :(
   })
 
-  e.preventDefault()
-}, false)
-
-
+}
 
 
 // my function
