@@ -2,7 +2,7 @@ nav(id='sidenav')
   a(id='logo', href="/"): img(id='middlelogo', src="/img/middle-logo-borrelli.svg", alt="")
   ul
     li
-      a(id='globalsite', href="http://www.luigiborrelli.com")
+      a(id='globalsite', href="http://www.luigiborrelli.com" target='_blank')
         span LuigiBorrelli.com
         i(class='fa fa-external-link', style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
 
@@ -22,10 +22,9 @@ nav(id='sidenav')
       a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
 
     li(class='lang')
-      a(class='lang-option active') EN
-      a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT
+      a(class='lang-option' data-lang='en') EN
+      a(class='lang-option doable' data-lang='it' href='#') IT
 
-    include(src='includes/_lang-switcher.sgr')
 
 
 nav(id='mobnav')
@@ -50,7 +49,7 @@ nav(id='mobnav')
 
   ul#mobmenu.collapsed
     li
-      a(id='globalsite', href="http://www.luigiborrelli.com") LuigiBorrelli.com
+      a(id='globalsite', href="http://www.luigiborrelli.com" target='_blank') LuigiBorrelli.com
         i.fa.fa-external-link(style="font-size: 0.8em; padding-left: 5px;" aria-hidden="true")
     li: a(class='mobmenu' href="/") All Fragrances
 
@@ -62,5 +61,5 @@ nav(id='mobnav')
       a(href='https://www.instagram.com/luigiborrellinapoli/' target='_blank'): i(class="fa fa-instagram")
 
     li(class='lang')
-      a(class='lang-option active') EN
-      a(class='lang-option' href='/it' onclick='lngSwitcher(this); return false;') IT
+      a(class='lang-option' data-lang='en') EN
+      a(class='lang-option doable' data-lang='it' href='#') IT

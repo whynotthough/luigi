@@ -1,10 +1,4 @@
-
-
-
-// if (window.location.pathname === '/') {
-//  location.assign(newPath)
-// }
-
+const jqueryZoom = require('jquery-zoom')
 
 // HIDE/SHOW MOB NAV BAR VIA SCROLL
 var didScroll;
@@ -46,15 +40,11 @@ function hasScrolled() {
 }
 
 
-
-
 // JS ONLY FOR PRODUCT PAGES
-if (window.location.pathname.indexOf('products') >= 0){
-
+if (window.location.pathname.indexOf('products') >= 0) {
   // IMAGE ZOOM
-  const jqueryZoom = require('jquery-zoom')
-  // console.log(jqueryZoom)
   $(document).ready(function(){
+    // console.log('ready')
     $('#big-photo-wraper').zoom();
     // console.log($('#big-photo-wraper')[0])
   });
@@ -64,12 +54,12 @@ if (window.location.pathname.indexOf('products') >= 0){
       prevPhotoBtn = document.querySelector("#left-btn"),
       nextPhotoBtn = document.querySelector("#right-btn");
 
-  thumbs.forEach(function(thumb){
-    thumb.addEventListener("click", function(){
-      activateThumb(thumb);
-      showcaseMe(thumb);
-    });
-  });
+  for (const thumb of thumbs) {
+    thumb.addEventListener("click", ()=> {
+      activateThumb(thumb)
+      showcaseMe(thumb)
+    })
+  }
 
   prevPhotoBtn.addEventListener('click', function(){
     var currPhoto = document.querySelector(".current");
@@ -108,10 +98,12 @@ if (window.location.pathname.indexOf('products') >= 0){
     thumbs[0].classList.add('current'); // set the first thumb as 'current' by default
   })(); // run as IIFE straight away: ()();
 
+
+
   function activateThumb(th){
-    thumbs.forEach(function(thumb) {
-      thumb.classList.remove('current'); // reset 'current' for all thumbs
-    });
+    for (const thumb of thumbs) {
+      thumb.classList.remove('current')
+    }
     th.classList.add('current'); // set 'current' for the clicked thumb
   };
 
@@ -193,4 +185,31 @@ for (var i = bodyNodes.length; i--;) {
     bodyNodes[i].innerHTML = nodeNewHTML
 
   }
+}
+
+// LANGUAGE SWITCHER
+const langOptions = document.querySelectorAll('.lang-option.doable')
+for (const lang of langOptions) {
+  lang.addEventListener('click', ()=>{
+    event.preventDefault()
+    switchLang ( lang.getAttribute('data-lang') )
+  })
+}
+
+function switchLang ( lang ) {
+  const currPath = window.location.pathname
+  let shift
+  if ( lang === 'en' ) {
+    lang = '/'
+    shift = 4
+  } else {
+    lang = `/${lang}/`
+    shift = 1
+  }
+  if ( currPath.length <= 4 ) {
+    location.assign( lang )
+    return
+  }
+  let newPath = lang + currPath.slice( shift )
+  location.assign( newPath )
 }

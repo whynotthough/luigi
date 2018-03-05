@@ -60,18 +60,15 @@ nav a
 .lang
   margin-top: 2em
 
-  & :first-of-type
-    margin-right: 1.2em
-
-  & .active
-    opacity: 1
-    cursor: default
 
   & a
-    opacity: 0.4
-    cursor: pointer
-  & a:hover
-    opacity: 1
+    &:first-of-type
+      margin-right: 1.2em
+
+    &.doable
+      opacity: .4
+      &:hover
+        opacity: 1
 
 #mobnav
   z-index: 100
