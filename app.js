@@ -25,6 +25,9 @@ module.exports = {
           template: {
             path: 'views/product.sgr',
             output: (e) => `products/${e.fields.productUrl}.html`
+          },
+          filters: {
+            order: 'sys.createdAt'
           }
         },
         {
@@ -33,6 +36,9 @@ module.exports = {
           template: {
             path: 'views/it/product.sgr',
             output: (e) => `it/products/${e.fields.productUrl}.html`
+          },
+          filters: {
+            order: 'sys.createdAt'
           }
         },
         {
@@ -68,7 +74,12 @@ module.exports = {
   ignore: ['**/_*/*', '**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', 'package-lock.json', 'netlify.toml'],
   reshape: htmlStandards({
     parser: sugarml,
-    locals: (ctx) => Object.assign(locals, { pageId: pageId(ctx), slugme: slugify, foo: 'bar', env }),
+    locals: (ctx) => Object.assign(locals, {
+      pageId: pageId(ctx),
+      slugme: slugify,
+      oo: 'bar', env,
+      clearUndef: (e = '') => e
+    }),
     minify: env === 'production'
   }),
   postcss: cssStandards({

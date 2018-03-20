@@ -28,7 +28,7 @@ extends(src='../layout.sgr')
 								data-item-url="/it/products/{{ item.fields.productUrl }}.html"
                 data-item-description="{{ item.fields.subname }}") Coming soon
 								//- data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCtaIt }}
-              p(id='cta-subline') {{ item.fields.buttonSublineIt }}
+              p(id='cta-subline') {{ clearUndef(item.fields.buttonSublineIt) }}
 
 						table
 							tr
