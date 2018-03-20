@@ -33,13 +33,13 @@ extends(src='../layout.sgr')
 						table
 							tr
 								td.pyramid-level Note di testa:
-								td.pyramid-notes {{ item.fields.topNotesIt }}
+								td.pyramid-notes {{ clearUndef(item.fields.topNotesIt) }}
 							tr
 								td.pyramid-level Note di cuore:
-								td.pyramid-notes {{ item.fields.heartNotesIt }}
+								td.pyramid-notes {{ clearUndef(item.fields.heartNotesIt) }}
 							tr
 								td.pyramid-level Note di fondo:
-								td.pyramid-notes {{ item.fields.baseNotesIt }}
+								td.pyramid-notes {{ clearUndef(item.fields.baseNotesIt) }}
 
 					#productBottomHalf
 						#thumbs
