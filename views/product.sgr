@@ -48,7 +48,7 @@ extends(src='layout.sgr')
 
             article#on-product
               #read-more-cta
-                a
+                a(data-more='Read More' data-less='Show Less')
                   button Read More
                   i.fa.fa-angle-down
               #white-gradient-when-collapsed

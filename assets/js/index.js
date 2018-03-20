@@ -108,17 +108,19 @@ if (window.location.pathname.indexOf('products') >= 0) {
   };
 
   // OPEN AND COLLAPSE AN ARTICLE ON PRODUCT PAGE
-  var more = document.querySelector("#read-more-cta a");
-  var longread = document.querySelector("#product-longread");
-  var gradient = document.querySelector("#white-gradient-when-collapsed");
+  const more = document.querySelector("#read-more-cta a")
+  const longread = document.querySelector("#product-longread")
+  const gradient = document.querySelector("#white-gradient-when-collapsed")
+  const readmore = more.getAttribute('data-more')
+  const showless = more.getAttribute('data-less')
   more.addEventListener("click", function(){
     if (longread.classList.contains("lr-collapsed")) {
-      more.innerHTML = '<button>Show Less</button><i class="fa fa-angle-up" aria-hidden="true"></i>';
+      more.innerHTML = `<button>${showless}</button><i class="fa fa-angle-up" aria-hidden="true"></i>`
     } else {
-      more.innerHTML = '<button>Read More</button><i class="fa fa-angle-down" aria-hidden="true"></i>';
+      more.innerHTML = `<button>${readmore}</button><i class="fa fa-angle-down" aria-hidden="true"></i>`
     }
-    longread.classList.toggle("lr-collapsed");
-    gradient.classList.toggle("gradient-off");
+    longread.classList.toggle("lr-collapsed")
+    gradient.classList.toggle("gradient-off")
   })
 
 }
