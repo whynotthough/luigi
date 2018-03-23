@@ -4,7 +4,7 @@ footer
     form(action="#" id="email-form" name="email-form" class="half-footer-item" autocomplete='on' netlify-honeypot="bot-field" netlify)
       //- subscriber's language, hidden and automatically detected
       input(name="lang" type='hidden' value='it')
-      p(class='state-ready') Altri prodotti di bellezza viveranno presto. Non si può perdere...
+      p(class='state-ready') Non perdere l'occasione di conoscere gli altri prodotti che arriveranno presto
       input(id='email' class='state-ready' name="email" type="email" placeholder="IL SUO MAIL"  required)
       button(class='clear-cta state-ready btn-disabled' type='button') Sottoscrivi
       p(class='state-done-notif off' data-line=' viene salvato.' data-cheers='Grazie!')
@@ -13,7 +13,7 @@ footer
       input(type="hidden" name="bot-field")
   else
     form(action="#" id="email-form" class="half-footer-item" autocomplete='on')
-      p(class='state-ready') Non perdere l'occasione di conoscere gli altri prodotti che arriveranno presto...
+      p(class='state-ready') Non perdere l'occasione di conoscere gli altri prodotti che arriveranno presto
       input(id='email' class='state-ready' name="email" type="email" placeholder="IL SUO MAIL"  required)
       button(class='clear-cta state-ready btn-disabled' type='button') Sottoscrivi
       p(class='state-done-notif off' data-line=' not saved.' data-cheers='As on Staging.')
