@@ -1,24 +1,47 @@
-h2.textPage
-	margin: 0 2%
-	padding-top: 50px
-	padding-bottom: 20px
+.text-page
 
-article.textPage
-	text-align: justify
-	margin: 0 2%
-	column-count: 2
-	column-gap: 1.8rem
-	padding-bottom: 20px
+  & h2
+    padding-top: 50px
+    line-height: 1.4
+
+  & h2, & article
+    padding-bottom: 20px
+    margin: 0 6%
+
+    @media (width >= 1100px)
+      margin: 0 2%
+      padding-right: 100px
+
+  & article
+    text-align: justify
+    /*column-count: 2*/
+    /*column-gap: 1.8rem*/
+
+    & h3
+      line-height: 1.4
+      margin-top: 1.7em
+      margin-bottom: 0
+
+    & h4
+      font-weight: normal
+
+    & a
+      color: var(--lbgreen)
+      text-decoration: underline dotted
+      &:hover
+        text-decoration: none
 
 
-#pdf
-	height: 75vh
-	width: 100%
-	overflow: auto
-	-webkit-overflow-scrolling: touch
 
-#pdf embed
-	width: 100%
-	height: 100%
-	/* width 500px	 */
-	/* height 10000px */
+
+  #pdf
+    height: 75vh
+    width: 100%
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+
+  #pdf embed
+    width: 100%
+    height: 100%
+    /* width 500px	 */
+    /* height 10000px */
