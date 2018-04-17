@@ -24,7 +24,7 @@ extends(src='layout.sgr')
                 data-item-id="{{item.sys.id}}"
                 data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
                 data-item-price="{{ item.fields.price }}"
-                data-item-url="https://www.borrellifragrances.com/products/{{ item.fields.productUrl }}"
+                data-item-url="https://www.borrellifragrances.com/products/{{ item.fields.productUrl }}.html"
                 data-item-image='{{ item.fields.cardPhoto.fields.file.url }}?h=130&q=&fm=png'
                 data-item-weight="{{clearUndef(item.fields.weight)}}"
                 data-item-width='{{clearUndef(item.fields.width)}}'
