@@ -20,15 +20,18 @@ extends(src='../layout.sgr')
 
 						span(id='price') € {{ item.fields.price }}
 						.btn-w-subline
-							button(id='cta-buy-now' class='snipcart-add-item temp-inactive')(
-								data-item-id="1"
-								data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
-								data-item-price="{{ item.fields.price }}"
-								data-item-weight="{{clearUndef(item.fields.weight)}}"
-								data-item-url="/it/products/{{ item.fields.productUrl }}.html"
-                data-item-description="{{ item.fields.subname }}") Coming soon
-								//- data-item-description="{{ item.fields.subname }}") {{ item.fields.buttonCtaIt }}
-              p(id='cta-subline') {{ clearUndef(item.fields.buttonSublineIt) }}
+              button(id='cta-buy-now' class='snipcart-add-item')(
+                data-item-id="{{item.sys.id}}"
+                data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
+                data-item-price="{{ item.fields.price }}"
+                data-item-url="/it/products/{{ item.fields.productUrl }}"
+                data-item-image='{{ item.fields.cardPhoto.fields.file.url }}?h=130&q=&fm=png'
+                data-item-weight="{{clearUndef(item.fields.weight)}}"
+                data-item-width='{{clearUndef(item.fields.width)}}'
+                data-item-length='{{clearUndef(item.fields.length)}}'
+                data-item-height='{{clearUndef(item.fields.height)}}'
+                data-item-description="{{ clearUndef(item.fields.subname) }}") Buy now
+
 
 						table
 							tr

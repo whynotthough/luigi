@@ -77,7 +77,8 @@ module.exports = {
     locals: (ctx) => Object.assign(locals, {
       pageId: pageId(ctx),
       slugme: slugify,
-      oo: 'bar', env,
+      foo: 'bar',
+      env,
       clearUndef: (e = '') => e
     }),
     minify: env === 'production'
