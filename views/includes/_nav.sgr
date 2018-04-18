@@ -13,7 +13,7 @@ nav(id='sidenav')
       li: a(href="/products/{{ product.fields.productUrl }}") {{ product.fields.name }}
 
     li
-      a(class='mycart snipcart-checkout temp-hidden', href="#")
+      a(class='mycart snipcart-checkout', href="#")
         span My Cart
         img(id='bagicon', src="/img/bag.svg", alt="")
 
@@ -42,9 +42,9 @@ nav(id='mobnav')
       }
 
 
-    a(id='smalllogo', class='temp-moblogo-hardcentered', href="/")
+    a(id='smalllogo', class='', href="/")
       img(src="/img/lb-small-logo.svg", alt="")
-    a(class='mycart snipcart-checkout temp-hidden' href="#")
+    a(class='mycart snipcart-checkout' href="#")
       img(src="/img/bag.svg", alt="")
 
   ul#mobmenu.collapsed

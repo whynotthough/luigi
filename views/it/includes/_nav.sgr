@@ -13,7 +13,7 @@ nav(id='sidenav')
       li: a(href="/it/products/{{ product.fields.productUrl }}") {{ product.fields.name }}
 
     li
-      a(class='mycart snipcart-checkout temp-hidden', href="#")
+      a(class='mycart snipcart-checkout', href="#")
         span Carrello
         img(id='bagicon', src="/img/bag.svg", alt="")
 
@@ -39,9 +39,9 @@ nav(id='mobnav')
         document.querySelector("ul#mobmenu").classList.toggle("collapsed");
       }
 
-    a(id='smalllogo', class='temp-moblogo-hardcentered', href="/it")
+    a(id='smalllogo', class='', href="/it")
       img(src="/img/lb-small-logo.svg", alt="")
-    a(class='mycart snipcart-checkout temp-hidden', href="#")
+    a(class='mycart snipcart-checkout', href="#")
       img(src="/img/bag.svg", alt="")
 
   ul#mobmenu.collapsed

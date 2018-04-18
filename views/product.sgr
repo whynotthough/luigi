@@ -20,7 +20,7 @@ extends(src='layout.sgr')
 
             span(id='price') € {{ item.fields.price }}
             .btn-w-subline
-              button(id='cta-buy-now' class='snipcart-add-item temp-inactive')(
+              button(id='cta-buy-now' class='snipcart-add-item')(
                 data-item-id="parfume"
                 data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
                 data-item-price="{{ item.fields.price }}"
@@ -30,7 +30,7 @@ extends(src='layout.sgr')
                 data-item-width='{{clearUndef(item.fields.width)}}'
                 data-item-length='{{clearUndef(item.fields.length)}}'
                 data-item-height='{{clearUndef(item.fields.height)}}'
-                data-item-description="{{ clearUndef(item.fields.subname) }}") Coming Soon
+                data-item-description="{{ clearUndef(item.fields.subname) }}") Buy now
 
 
 
