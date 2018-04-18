@@ -21,7 +21,7 @@ extends(src='../layout.sgr')
 						span(id='price') € {{ item.fields.price }}
 						.btn-w-subline
               button(id='cta-buy-now' class='snipcart-add-item temp-inactive')(
-                data-item-id="{{item.sys.id}}"
+                data-item-id="parfume"
                 data-item-name="{{ item.fields.name.toUpperCase() }} Luigi Borrelli"
                 data-item-price="{{ item.fields.price }}"
                 data-item-url="https://www.borrellifragrances.com/it/products/{{ item.fields.productUrl }}.html"

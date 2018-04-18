@@ -21,7 +21,7 @@ html
 
     script(src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
       id='snipcart'
-      data-api-key='NGZmMzU2MDgtYjg0MC00Y2JlLTg0ZDktZTQ2YTA1NmJhNjY2NjM2MzA1MTUzNDAzNTA0NTIw')
+      data-api-key='ZDEwMjEyYzAtNmE4MS00NGRiLTlhN2UtZjVjMDZmODFjNjdiNjM2MzA1MTUzNDAzNTA0NTIw')
 
   body
     block(name='nav')
